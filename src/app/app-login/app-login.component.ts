@@ -51,11 +51,12 @@ export class AppLoginComponent {
           success: 'Login efetuado com sucesso!',
         })
       ).subscribe(()=>{
+        this.formularioLogin.reset();
         this.rotas.navigate(['/cdd'])
       })
 
       this.autenticacaoFirebaseService.loginUsuario(email, senha).subscribe({
-        
+
         error: (err) => {
           let message = 'Ocorreu um erro'
           switch (err.code) {
