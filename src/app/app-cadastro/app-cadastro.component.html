@@ -1,30 +1,67 @@
-<mat-grid-list cols="1" [rowHeight]="'100px'" [gutterSize]="'1px'">
-  <mat-grid-tile [colspan]="1" [rowspan]="1">Cadastro no BookShelf</mat-grid-tile>
-  <mat-card>
-    <img mat-card-image src="../../assets/imagens/cover2.png" alt="Cover do Cadastro de Usuários">
-    <form [formGroup]="formularioCadastro" (ngSubmit)="enviaCadastro()">
-      <mat-form-field>
-        <input matInput placeholder="Entre com seu nome" formControlName="nome">
-        <mat-error *ngIf="nome?.errors?.['required']">Será necessário seu nome.</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Email de Login" formControlName="email">
-        <mat-error *ngIf="email?.errors?.['required']">Será necessário informar um e-mail</mat-error>
-        <mat-error *ngIf="email?.errors?.['email']">O formato do e-mail não é valido</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Entre com senha" formControlName="senha" type="password">
-        <mat-error *ngIf="senha?.errors?.['required']">Esqueceu a senha</mat-error>
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Confirme a senha anterior" formControlName="confirmaSenha" type="password">
-        <mat-error *ngIf="senha?.errors?.['required']">Entre coma a confirmação</mat-error>
-        <mat-error *ngIf="formularioCadastro.errors?.['senhaConfirmada']">Entre coma a confirmação</mat-error>
-      </mat-form-field>
-      <mat-card-footer>
-        <button mat-button color="accent" type="submit">Cadastrar</button>
-        <button mat-button color="primary">Fechar</button>
-      </mat-card-footer>
-    </form>
+  <mat-card mat-elevation-z5>
+    <div class="form-container mat-elevation-z5">
+      <img mat-card-image src="../../assets/imagens/cover2.png" alt="Cover do Cadastro de Usuários">
+      <h3>Siga os passos para realizar o cadastro</h3>
+      <button mat-raised-button (click)="isEditable = !isEditable">
+        {{!isEditable ? 'Habilitar edição' : 'Desabilitar edição'}}
+      </button>
+      <form [formGroup]="formularioCadastro" (ngSubmit)="enviaCadastro()">
+          <mat-stepper linear #stepper orientation="vertical">
+            <mat-step [stepControl]="nomeCadastro" [editable]="isEditable">
+              <mat-form-field>
+                <input matInput placeholder="nome" formControlName="nome" >
+                <mat-error *ngIf="nome?.errors?.['required']">
+                  Nome obrigatório
+                </mat-error>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperNext>Próximo</button>
+              </div>
+              </mat-step>
+              <mat-step [stepControl]="emailCadastro" [editable]="isEditable">
+                <mat-form-field>
+                  <input matInput placeholder="email" formControlName="email" >
+                  <mat-error *ngIf="email?.errors?.['required']">
+                    Email obrigatório
+                  </mat-error>
+                  <mat-error *ngIf="email?.errors?.['email']">
+                    Entre com um formato de emaiil correto
+                  </mat-error>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious>Voltar</button>
+                  <button mat-button matStepperNext>Próximo</button>
+                </div>
+              </mat-step>
+              <mat-step [stepControl]="senhaCadastro" [editable]="isEditable">
+              <mat-form-field>
+                <input matInput placeholder="senha" formControlName="senha" type="password" >
+                <mat-error *ngIf="senha?.errors?.['required']">
+                  Senha obrigatória
+                </mat-error>
+              </mat-form-field>
+              <div>
+                <button mat-button matStepperPrevious>Voltar</button>
+                <button mat-button matStepperNext>Próximo</button>
+              </div>
+              </mat-step>
+              <mat-step [stepControl]="confirmaSenhaCadastro" [editable]="isEditable">
+                <mat-form-field>
+                  <input matInput placeholder="confirme a senha" formControlName="confirmaSenha" type="password" >
+                  <mat-error *ngIf="confirmaSenha?.errors?.['required']">
+                    Confirmação de senha obrigatória
+                  </mat-error>
+                </mat-form-field>
+                <mat-error *ngIf="formularioCadastro.errors?.['senhasDiferentes']">
+                  Senhas não são iguais
+                </mat-error>
+                <div class="center margin-top">
+                  <button mat-raised-button color="primary" type="submit">
+                    Cadastre-se
+                  </button>
+                </div>
+              </mat-step>
+            </mat-stepper>
+        </form>
+    </div>
   </mat-card>
-</mat-grid-list>

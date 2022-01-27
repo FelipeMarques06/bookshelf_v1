@@ -1,21 +1,22 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 
 import { AutenticacaoFirebaseService } from './../servicosInterface/autenticacao-firebase.service';
 
-export function passwordMatchValidator(): ValidatorFn {
+export function passwordsMatchValidator(): ValidatorFn {
   return (control: AbstractControl): ValidationErrors | null => {
     const senha = control.get('senha')?.value;
-    const confirma = control.get('confirmaSenha')?.value;
+    const confirmaSenha = control.get('confirmaSenha')?.value;
 
-    if (senha && confirma && senha !== confirma) {
+    if(senha && confirmaSenha && senha !== confirmaSenha){
       return {
-        senhaConfirmada: true
+        senhasDiferentes: true
       }
+
     }
-    return null;
+  return null;
   }
 }
 
@@ -25,13 +26,20 @@ export function passwordMatchValidator(): ValidatorFn {
   styleUrls: ['./app-cadastro.component.scss']
 })
 export class AppCadastroComponent implements OnInit {
+  nomeCadastro!: FormGroup;
+  emailCadastro!: FormGroup;
+  senhaCadastro!: FormGroup;
+  confirmaSenhaCadastro!: FormGroup;
+
+  isEditable = false;
 
   formularioCadastro = this.loginBuilder.group({
     nome: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     senha: new FormControl('', Validators.required),
     confirmaSenha: new FormControl('', Validators.required),
-  }, { validators: passwordMatchValidator() });
+  }, { validators: passwordsMatchValidator() });
+
 
   constructor(
     private loginBuilder: FormBuilder,
@@ -54,6 +62,12 @@ export class AppCadastroComponent implements OnInit {
 
   get confirmaSenha() {
     return this.formularioCadastro.get('confirmaSenha')
+  }
+
+  next(){
+    if(!this.formularioCadastro.valid){
+      return;
+    }
   }
 
   enviaCadastro() {
