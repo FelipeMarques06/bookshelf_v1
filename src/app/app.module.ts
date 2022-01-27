@@ -32,6 +32,7 @@ import { NavegacaoComponent } from './navegacao/navegacao.component';
 import { AppCadastroComponent } from './app-cadastro/app-cadastro.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { AppNotFoundComponent } from './app-not-found/app-not-found.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     NavegacaoComponent,
     FeedComponent,
     AppLoginComponent,
-    AppCadastroComponent
+    AppCadastroComponent,
+    AppNotFoundComponent
   ],
   imports: [
     BrowserModule,
