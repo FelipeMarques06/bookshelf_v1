@@ -74,6 +74,7 @@ export class AppCadastroComponent implements OnInit {
     if (!this.formularioCadastro.valid) {
       return;
     }
+
     const { nome, email, senha } = this.formularioCadastro.value;
     this.autenticacaoFirebaseService
       .cadastrarUsuario(nome, email, senha)
@@ -86,6 +87,10 @@ export class AppCadastroComponent implements OnInit {
       ).subscribe(() => {
         this.rotas.navigate(['/'])
       });
+  }
+
+  clear(){
+    this.formularioCadastro.value.clear()
   }
   ngOnInit(): void {
   }

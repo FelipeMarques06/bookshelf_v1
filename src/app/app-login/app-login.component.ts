@@ -1,16 +1,21 @@
+import { catchError } from 'rxjs';
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
 
 import { AutenticacaoFirebaseService } from './../servicosInterface/autenticacao-firebase.service';
+
 
 @Component({
   selector: 'app-app-login',
   templateUrl: './app-login.component.html',
   styleUrls: ['./app-login.component.scss']
 })
+
+
 export class AppLoginComponent {
   formularioLogin = this.loginBuilder.group({
     email: new FormControl('',[Validators.required, Validators.email]),
@@ -24,7 +29,8 @@ export class AppLoginComponent {
     @Inject(MAT_DIALOG_DATA) public conteudo:string,
     private toast: HotToastService,
     private rotas: Router,
-    private autenticacaoFirebaseService: AutenticacaoFirebaseService
+    private autenticacaoFirebaseService: AutenticacaoFirebaseService,
+    private snackBar: MatSnackBar
     ) {}
 
     get email(){
@@ -42,12 +48,31 @@ export class AppLoginComponent {
       this.autenticacaoFirebaseService.loginUsuario(email, senha)
       .pipe(
         this.toast.observe({
-          success: 'Login valido, obrigado',
-          loading: 'Redirecionando...',
-          error: 'Algo deu errado, confira as informações'
+          success: 'Login efetuado com sucesso!',
         })
       ).subscribe(()=>{
         this.rotas.navigate(['/cdd'])
       })
+
+      this.autenticacaoFirebaseService.loginUsuario(email, senha).subscribe({
+        
+        error: (err) => {
+          let message = 'Ocorreu um erro'
+          switch (err.code) {
+            case 'auth/invalid-email':
+              message = 'Email inválido';
+              break;
+            case 'auth/user-not-found':
+              message = 'Usuário não encontrado';
+              break;
+            case 'auth/wrong-password':
+              message = 'Senha não confere';
+              break
+            default:
+              message = 'Ocorreu um erro!'
+        }
+        this.toast.show(message);
+      }
+    })
   }
 }
