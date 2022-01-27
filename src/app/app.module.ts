@@ -31,6 +31,7 @@ import { FeedComponent } from './feed/feed.component';
 import { NavegacaoComponent } from './navegacao/navegacao.component';
 import { AppCadastroComponent } from './app-cadastro/app-cadastro.component';
 import {MatStepperModule} from '@angular/material/stepper';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     provideStorage(() => getStorage()),
     HotToastModule.forRoot(),
     MatStepperModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
