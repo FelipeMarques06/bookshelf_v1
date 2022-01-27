@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { catchError, Observable, of } from 'rxjs';
@@ -31,12 +31,12 @@ export class NavegacaoComponent {
       shareReplay()
     );
   constructor(
-    private breakpointObserver: BreakpointObserver,
-    private telaLogin: MatDialog,
-    private rotas: Router,
-    private autenticacaoFirebaseService: AutenticacaoFirebaseService,
-    private navegadorService: NavegacaoService
-    ) {
+      private breakpointObserver: BreakpointObserver,
+      private telaLogin: MatDialog,
+      private rotas: Router,
+      private autenticacaoFirebaseService: AutenticacaoFirebaseService,
+      private navegadorService: NavegacaoService
+  ) {
       this.itensMenu$ = navegadorService.listagemMenu()
       .pipe(
         catchError(error =>{
@@ -55,5 +55,17 @@ export class NavegacaoComponent {
       this.autenticacaoFirebaseService.sairLogin().subscribe(() =>{
         this.rotas.navigate([''])
       })
+    }
+
+    innerWidth!: number;
+    ngOnInit(): void {
+      this.innerWidth = window.innerWidth;
+
+    }
+
+    @HostListener('window:resize', ['$event'])
+    onResize(event:number) {
+      this.innerWidth = window.innerWidth;
+      // console.log(this.innerWidth)
     }
 }
