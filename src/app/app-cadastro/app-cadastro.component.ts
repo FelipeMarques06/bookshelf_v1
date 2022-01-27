@@ -85,13 +85,11 @@ export class AppCadastroComponent implements OnInit {
           error: ({ message }) => `Houve um problema: #BS${message}`,
         })
       ).subscribe(() => {
+        this.formularioCadastro.reset();
         this.rotas.navigate(['/'])
       });
   }
 
-  clear(){
-    this.formularioCadastro.value.clear()
-  }
   ngOnInit(): void {
   }
 }
