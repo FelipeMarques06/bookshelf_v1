@@ -1,7 +1,7 @@
 import { catchError } from 'rxjs';
 import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
-import { MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
@@ -30,7 +30,8 @@ export class AppLoginComponent {
     private toast: HotToastService,
     private rotas: Router,
     private autenticacaoFirebaseService: AutenticacaoFirebaseService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private fecharTela: MatDialog,
     ) {}
 
     get email(){
@@ -75,5 +76,8 @@ export class AppLoginComponent {
         this.toast.show(message);
       }
     })
+  }
+  fecharDialogo() {
+    this.fecharTela.closeAll();
   }
 }
