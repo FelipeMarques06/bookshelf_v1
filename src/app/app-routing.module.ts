@@ -1,3 +1,4 @@
+import { AppNotFoundComponent } from './app-not-found/app-not-found.component';
 import { ReportagemComponent } from './reportagem/reportagem.component';
 import { AppCadastroComponent } from './app-cadastro/app-cadastro.component';
 import { FeedComponent } from './feed/feed.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
     path: 'cdd',
     loadChildren: () => import('./cdd/cdd.module').then(c => c.CddModule),
     ...canActivate(enviarSemLogin)
+  },
+  {
+    path:'**',
+    component: AppNotFoundComponent
   }
 ];
 
