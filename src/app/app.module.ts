@@ -33,6 +33,7 @@ import { NavegacaoComponent } from './navegacao/navegacao.component';
 import { AppCadastroComponent } from './app-cadastro/app-cadastro.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { PsicologiaComponent } from './psicologia/psicologia/psicologia.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FeedComponent,
     AppLoginComponent,
     AppCadastroComponent,
-    ReportagemComponent
+    ReportagemComponent,
+    PsicologiaComponent
   ],
   imports: [
     BrowserModule,
