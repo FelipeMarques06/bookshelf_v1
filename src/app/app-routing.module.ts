@@ -1,3 +1,4 @@
+import { TeatroComponent } from './teatro/teatro/teatro.component';
 import { AppNotFoundComponent } from './app-not-found/app-not-found.component';
 import { ReportagemComponent } from './reportagem/reportagem.component';
 import { AppCadastroComponent } from './app-cadastro/app-cadastro.component';
@@ -36,6 +37,10 @@ const routes: Routes = [
   },
   {
     path: 'artes', component: ArtesComponent,
+    ...canActivate(enviarSemLogin)
+  },
+  {
+    path: 'teatro', component: TeatroComponent,
     ...canActivate(enviarSemLogin)
   },
   {

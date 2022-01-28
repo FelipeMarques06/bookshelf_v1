@@ -5,5 +5,5 @@
   {"linkMenu": "/psicologia", "labelMenu":"Livros de Psicologia", "hab": true},
   {"linkMenu": "/artes", "labelMenu":"Livros de Artes", "hab": true},
   {"linkMenu": "/tecnologia", "labelMenu":"Livros de Tecnologia", "hab": true},
-  {"linkMenu": "/estante", "labelMenu":"Estante Particular", "hab": false}
+  {"linkMenu": "/teatro", "labelMenu":"Livros de Teatro", "hab": true}
 ]
