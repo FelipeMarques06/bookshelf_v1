@@ -1,8 +1,8 @@
 export interface InterfacePsicologia {
-  _idPsicologia: number;
+  _idPsicologia: string;
    tituloPsicologia: string;
    autorPsicologia: string;
-   isbnPsicologia: number;
+   isbnPsicologia: string;
    editoraPsicologia: string;
-   anoPsicologia: number;
+   anoPsicologia: string;
 }
