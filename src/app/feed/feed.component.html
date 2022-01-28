@@ -1,4 +1,4 @@
-<div class="grid-container">
+<div class="grid-container" *ngIf="cards$ | async as card; else loading">
   <h1 class="mat-h1" *ngIf="usuario$ | async as usuario">Feed de notícias: {{usuario.displayName}}</h1>
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let card of cards$ | async" [colspan]="card.cols" [rowspan]="card.rows">
@@ -25,3 +25,8 @@
     </mat-grid-tile>
   </mat-grid-list>
 </div>
+<ng-template #loading>
+  <div class="loading-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
