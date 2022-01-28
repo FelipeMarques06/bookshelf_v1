@@ -31,6 +31,7 @@ import { FeedComponent } from './feed/feed.component';
 import { NavegacaoComponent } from './navegacao/navegacao.component';
 import { AppCadastroComponent } from './app-cadastro/app-cadastro.component';
 import {MatStepperModule} from '@angular/material/stepper';
+import { ReportagemComponent } from './reportagem/reportagem.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import {MatStepperModule} from '@angular/material/stepper';
     NavegacaoComponent,
     FeedComponent,
     AppLoginComponent,
-    AppCadastroComponent
+    AppCadastroComponent,
+    ReportagemComponent
   ],
   imports: [
     BrowserModule,

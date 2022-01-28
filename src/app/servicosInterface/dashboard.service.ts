@@ -1,7 +1,8 @@
-import { Dashboard } from './../modelosInterface/dashboard';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { first, tap } from 'rxjs';
+
+import { Dashboard } from './../modelosInterface/dashboard';
 
 @Injectable({
   providedIn: 'root'

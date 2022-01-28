@@ -3,33 +3,34 @@ import { Component } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-import { Dashboard } from './../modelosInterface/dashboard';
+import { Reportagem } from './../modelosInterface/reportagem';
 import { AutenticacaoFirebaseService } from './../servicosInterface/autenticacao-firebase.service';
-import { DashboardService } from './../servicosInterface/dashboard.service';
+import { ReportagemService } from './../servicosInterface/reportagem.service';
 
 @Component({
-  selector: 'app-feed',
-  templateUrl: './feed.component.html',
-  styleUrls: ['./feed.component.scss']
+  selector: 'app-reportagem',
+  templateUrl: './reportagem.component.html',
+  styleUrls: ['./reportagem.component.scss']
 })
-export class FeedComponent {
-  cards$: Observable<Dashboard[]>;
+export class ReportagemComponent {
+
+  reportagem$: Observable<Reportagem[]>;
   usuario$= this.autenticacaoFirebaseService.usuarioLogado$;
-  cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+  reportagens= this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
-        return this.cards$;
+        return this.reportagem$;
       }
-      return this.cards$;
+      return this.reportagem$;
     })
   );
 
-  constructor(
+  constructor (
     private breakpointObserver: BreakpointObserver,
-    private dashboardService: DashboardService,
+    private reportagemService: ReportagemService,
     private autenticacaoFirebaseService: AutenticacaoFirebaseService
     ) {
-      this.cards$ = dashboardService.listagemCards()
+      this.reportagem$ = reportagemService.listagemReportagem()
       .pipe(
         catchError(error =>{
           return of([])
