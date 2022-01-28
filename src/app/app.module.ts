@@ -1,3 +1,5 @@
+import { TecnologiaComponent } from './tecnologia/tecnologia.component';
+import { ArtesComponent } from './artes/artes.component';
 import { ReportagemComponent } from './reportagem/reportagem.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
@@ -45,7 +47,9 @@ import { AppNotFoundComponent } from './app-not-found/app-not-found.component';
     AppCadastroComponent,
     ReportagemComponent,
     PsicologiaComponent,
-    AppNotFoundComponent
+    AppNotFoundComponent,
+    ArtesComponent,
+    TecnologiaComponent
   ],
   imports: [
     BrowserModule,

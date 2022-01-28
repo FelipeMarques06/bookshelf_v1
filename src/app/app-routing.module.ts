@@ -6,6 +6,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo } from '@angular/fire/auth-guard';
 import { PsicologiaComponent } from './psicologia/psicologia/psicologia.component';
+import { TecnologiaComponent } from './tecnologia/tecnologia.component';
+import { ArtesComponent } from './artes/artes.component';
 
 const enviarSemLogin = () => redirectUnauthorizedTo(['/app-app-cadastro']);
 
@@ -26,6 +28,14 @@ const routes: Routes = [
   },
   {
     path: 'psicologia', component: PsicologiaComponent,
+    ...canActivate(enviarSemLogin)
+  },
+  {
+    path: 'tecnologia', component: TecnologiaComponent,
+    ...canActivate(enviarSemLogin)
+  },
+  {
+    path: 'artes', component: ArtesComponent,
     ...canActivate(enviarSemLogin)
   },
   {
