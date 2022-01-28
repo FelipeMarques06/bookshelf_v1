@@ -31,15 +31,16 @@ export class AppLoginComponent {
     private rotas: Router,
     private autenticacaoFirebaseService: AutenticacaoFirebaseService,
     private snackBar: MatSnackBar
-    ) {}
+  ) {}
 
-    get email(){
-      return this.formularioLogin.get('email')
-    }
+  get email(){
+    return this.formularioLogin.get('email')
+  }
 
-    get senha(){
-      return this.formularioLogin.get('senha')
-    }
+  get senha(){
+    return this.formularioLogin.get('senha')
+  }
+
     loginFirebase(){
       if(!this.formularioLogin.valid){
         return;
@@ -55,7 +56,7 @@ export class AppLoginComponent {
       })
 
       this.autenticacaoFirebaseService.loginUsuario(email, senha).subscribe({
-        
+
         error: (err) => {
           let message = 'Ocorreu um erro'
           switch (err.code) {
@@ -73,6 +74,13 @@ export class AppLoginComponent {
         }
         this.toast.show(message);
       }
+    })
+  }
+
+  abrirLoginGoogle(){
+    this.autenticacaoFirebaseService.logarGoogle()
+    .subscribe(()=>{
+      this.rotas.navigate(['/feed'])
     })
   }
 }
