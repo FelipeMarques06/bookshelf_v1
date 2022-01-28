@@ -80,4 +80,12 @@ export class AppLoginComponent {
   fecharDialogo() {
     this.fecharTela.closeAll();
   }
+
+  abrirLoginGoogle(){
+    this.autenticacaoFirebaseService.logarGoogle()
+    .subscribe(()=>{
+      this.rotas.navigate(['/feed'])
+    })
+    this.fecharDialogo()
+  }
 }
