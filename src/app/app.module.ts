@@ -1,3 +1,4 @@
+import { ReportagemComponent } from './reportagem/reportagem.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -39,7 +40,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     NavegacaoComponent,
     FeedComponent,
     AppLoginComponent,
-    AppCadastroComponent
+    AppCadastroComponent,
+    ReportagemComponent
   ],
   imports: [
     BrowserModule,

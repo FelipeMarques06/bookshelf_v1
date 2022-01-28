@@ -1,3 +1,4 @@
+import { ReportagemComponent } from './reportagem/reportagem.component';
 import { AppCadastroComponent } from './app-cadastro/app-cadastro.component';
 import { FeedComponent } from './feed/feed.component';
 import { NgModule } from '@angular/core';
@@ -15,6 +16,10 @@ const routes: Routes = [
   },
   {
     path: 'feed', component: FeedComponent,
+    ...canActivate(enviarSemLogin)
+  },
+  {
+    path: 'reportagem', component: ReportagemComponent,
     ...canActivate(enviarSemLogin)
   },
   {
