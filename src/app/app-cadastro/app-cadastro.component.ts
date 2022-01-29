@@ -27,6 +27,7 @@ export function passwordsMatchValidator(): ValidatorFn {
 })
 export class AppCadastroComponent implements OnInit {
   nomeCadastro!: FormGroup;
+  fotoCadastro!: FormGroup;
   emailCadastro!: FormGroup;
   senhaCadastro!: FormGroup;
   confirmaSenhaCadastro!: FormGroup;
@@ -35,6 +36,7 @@ export class AppCadastroComponent implements OnInit {
 
   formularioCadastro = this.loginBuilder.group({
     nome: new FormControl('', Validators.required),
+    url: new FormControl('', Validators.required),
     email: new FormControl('', [Validators.required, Validators.email]),
     senha: new FormControl('', Validators.required),
     confirmaSenha: new FormControl('', Validators.required),
@@ -64,6 +66,10 @@ export class AppCadastroComponent implements OnInit {
     return this.formularioCadastro.get('confirmaSenha')
   }
 
+  get url() {
+    return this.formularioCadastro.get('url')
+  }
+
   next(){
     if(!this.formularioCadastro.valid){
       return;
@@ -75,9 +81,9 @@ export class AppCadastroComponent implements OnInit {
       return;
     }
 
-    const { nome, email, senha } = this.formularioCadastro.value;
+    const { nome, email, senha, url } = this.formularioCadastro.value;
     this.autenticacaoFirebaseService
-      .cadastrarUsuario(nome, email, senha)
+      .cadastrarUsuario(nome, email, senha, url)
       .pipe(
         this.toast.observe({
           success: 'Cadatro executado, bem vindo ao BookShelf',
@@ -87,7 +93,7 @@ export class AppCadastroComponent implements OnInit {
         this.rotas.navigate(['/'])
       })
 
-      this.autenticacaoFirebaseService.cadastrarUsuario(nome, email, senha).subscribe({
+      this.autenticacaoFirebaseService.cadastrarUsuario(nome, email, senha, url).subscribe({
 
         error: (err) => {
           let message = 'Ocorreu um erro'
