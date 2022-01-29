@@ -7,6 +7,7 @@
       </button>
       <form [formGroup]="formularioCadastro" (ngSubmit)="enviaCadastro()">
           <mat-stepper linear #stepper orientation="vertical">
+
             <mat-step [stepControl]="nomeCadastro" [editable]="isEditable">
               <mat-form-field>
                 <input matInput placeholder="nome" formControlName="nome" >
@@ -18,6 +19,23 @@
                 <button mat-button matStepperNext>Próximo</button>
               </div>
               </mat-step>
+
+              <mat-step [stepControl]="fotoCadastro" [editable]="isEditable">
+                <mat-form-field>
+                  <input matInput placeholder="Insira a URL da sua foto" formControlName="url">
+                  <mat-error *ngIf="url?.errors?.['required']">
+                    URL obrigatória
+                  </mat-error>
+                  <mat-error *ngIf="url?.errors?.['email']">
+                    Entre com um formato de emaiil correto
+                  </mat-error>
+                </mat-form-field>
+                <div>
+                  <button mat-button matStepperPrevious>Voltar</button>
+                  <button mat-button matStepperNext>Próximo</button>
+                </div>
+              </mat-step>
+
               <mat-step [stepControl]="emailCadastro" [editable]="isEditable">
                 <mat-form-field>
                   <input matInput placeholder="email" formControlName="email" >
@@ -33,6 +51,7 @@
                   <button mat-button matStepperNext>Próximo</button>
                 </div>
               </mat-step>
+
               <mat-step [stepControl]="senhaCadastro" [editable]="isEditable">
               <mat-form-field>
                 <input matInput placeholder="senha" formControlName="senha" type="password" >
@@ -45,6 +64,7 @@
                 <button mat-button matStepperNext>Próximo</button>
               </div>
               </mat-step>
+
               <mat-step [stepControl]="confirmaSenhaCadastro" [editable]="isEditable">
                 <mat-form-field>
                   <input matInput placeholder="confirme a senha" formControlName="confirmaSenha" type="password" >
@@ -61,6 +81,7 @@
                   </button>
                 </div>
               </mat-step>
+
             </mat-stepper>
         </form>
     </div>
