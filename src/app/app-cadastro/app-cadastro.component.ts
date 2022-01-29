@@ -86,7 +86,7 @@ export class AppCadastroComponent implements OnInit {
       .cadastrarUsuario(nome, email, senha, url)
       .pipe(
         this.toast.observe({
-          success: 'Cadatro executado, bem vindo ao BookShelf',
+          success: 'Cadastro executado, bem vindo ao BookShelf!',
         })
       ).subscribe(() => {
         this.formularioCadastro.reset();

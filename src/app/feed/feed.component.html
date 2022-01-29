@@ -15,7 +15,7 @@
         <mat-nav-list>
           <mat-list-item *ngFor="let link of card.link">
             <a matLine [href]="link.ref">{{ link.texto }}</a>
-            <button mat-icon-button>
+            <button mat-icon-button matTooltip="Mais informações">
               <mat-icon>info</mat-icon>
             </button>
             <mat-divider></mat-divider>

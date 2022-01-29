@@ -14,7 +14,7 @@
       </button>
       <img mat-card-sm-image *ngIf="innerWidth > 600" [width]="lIcone" [height]="aIcone" [src]="iconeGeral">
       <ng-container *ngIf="usuario$ | async as usuario; else botaoLogin">
-        <button mat-raised-button color="primary" [matMenuTriggerFor]="usuarioMenu">
+        <button mat-raised-button color="primary" [matMenuTriggerFor]="usuarioMenu" matTooltip="Conta BookShelf">
           <img class="imgPerfil" src= {{usuario.photoURL}} alt="foto de perfil">
           <!-- <mat-icon *ngIf="innerWidth > 600" class="mat-18">local_library</mat-icon> -->
           {{usuario.displayName}}
@@ -22,14 +22,13 @@
         </button>
       </ng-container>
       <ng-template #botaoLogin>
-        <button mat-raised-button color="primary" (click)="abrirLogin('Tela de Login')">
-          <mat-icon class="mat-18">login</mat-icon>
+        <button mat-raised-button color="primary" (click)="abrirLogin('Tela de Login')" matTooltip="Entre com sua conta">
           LOGIN
         </button>
       </ng-template>
     </mat-toolbar>
-    <mat-menu #usuarioMenu="matMenu">
-      <button mat-menu-item (click)="sairUsuario()">LOGOUT</button>
+    <mat-menu #usuarioMenu="matMenu" >
+      <button mat-menu-item (click)="sairUsuario()" matTooltip="Sair da conta">LOGOUT</button>
     </mat-menu>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

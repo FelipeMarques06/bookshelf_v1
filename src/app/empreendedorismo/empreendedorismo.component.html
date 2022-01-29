@@ -1,7 +1,7 @@
 <mat-card>
   <div *ngIf=" livrosEmpreendedorismo$ | async as livrosEmpreendedorismo; else loading;">
     <mat-toolbar color="accent">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" matTooltip="Opções">
         <mat-icon>menu</mat-icon>
       </button>
       <span>OS 10 PRINCIPAIS LIVROS DE EMPREENDEDORISMO</span>

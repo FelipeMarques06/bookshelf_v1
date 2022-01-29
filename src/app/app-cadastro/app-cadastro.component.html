@@ -2,7 +2,7 @@
     <div class="form-container mat-elevation-z5">
       <img mat-card-image src="../../assets/imagens/cover2.png" alt="Cover do Cadastro de Usuários">
       <h3>Siga os passos para realizar o cadastro</h3>
-      <button mat-raised-button (click)="isEditable = !isEditable">
+      <button mat-raised-button (click)="isEditable = !isEditable" matTooltip="Altere suas informações">
         {{!isEditable ? 'Habilitar edição' : 'Desabilitar edição'}}
       </button>
       <form [formGroup]="formularioCadastro" (ngSubmit)="enviaCadastro()">
