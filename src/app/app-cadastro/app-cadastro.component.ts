@@ -90,7 +90,7 @@ export class AppCadastroComponent implements OnInit {
         })
       ).subscribe(() => {
         this.formularioCadastro.reset();
-        this.rotas.navigate(['/'])
+        this.rotas.navigate(['/feed'])
       })
 
       this.autenticacaoFirebaseService.cadastrarUsuario(nome, email, senha, url).subscribe({
