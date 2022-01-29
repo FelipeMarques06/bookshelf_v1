@@ -38,6 +38,7 @@ import { PsicologiaComponent } from './psicologia/psicologia/psicologia.componen
 import { ReportagemComponent } from './reportagem/reportagem.component';
 import { TeatroComponent } from './teatro/teatro/teatro.component';
 import { TecnologiaComponent } from './tecnologia/tecnologia.component';
+import { AppRecuperarComponent } from './app-recuperar/app-recuperar.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { TecnologiaComponent } from './tecnologia/tecnologia.component';
     AppNotFoundComponent,
     ArtesComponent,
     TecnologiaComponent,
-    TeatroComponent
+    TeatroComponent,
+    AppRecuperarComponent
   ],
   imports: [
     BrowserModule,
