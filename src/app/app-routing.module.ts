@@ -1,3 +1,4 @@
+import { EmpreendedorismoComponent } from './empreendedorismo/empreendedorismo.component';
 import { AppRecuperarComponent } from './app-recuperar/app-recuperar.component';
 import { TeatroComponent } from './teatro/teatro/teatro.component';
 import { AppNotFoundComponent } from './app-not-found/app-not-found.component';
@@ -42,6 +43,10 @@ const routes: Routes = [
   },
   {
     path: 'teatro', component: TeatroComponent,
+    ...canActivate(enviarSemLogin)
+  },
+  {
+    path: 'empreendedorismo', component: EmpreendedorismoComponent,
     ...canActivate(enviarSemLogin)
   },
   {
