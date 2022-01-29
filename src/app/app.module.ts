@@ -1,3 +1,4 @@
+import { EmpreendedorismoComponent } from './empreendedorismo/empreendedorismo.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
@@ -53,7 +54,8 @@ import { AppRecuperarComponent } from './app-recuperar/app-recuperar.component';
     ArtesComponent,
     TecnologiaComponent,
     TeatroComponent,
-    AppRecuperarComponent
+    AppRecuperarComponent,
+    EmpreendedorismoComponent
   ],
   imports: [
     BrowserModule,
