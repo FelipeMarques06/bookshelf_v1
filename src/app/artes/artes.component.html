@@ -10,15 +10,15 @@
     <table mat-table [dataSource]="livrosArtes" class="mat-elevation-z8">
 
       <!-- Ranking -->
-      <ng-container matColumnDef="tituloArtes">
-        <th mat-header-cell *matHeaderCellDef> Título </th>
-        <td mat-cell *matCellDef="let artes"> {{ artes.tituloArtes }} </td>
+      <ng-container matColumnDef="_idArtes">
+        <th mat-header-cell *matHeaderCellDef> </th>
+        <td mat-cell *matCellDef="let artes"> {{ artes._idArtes }} </td>
       </ng-container>
 
       <!-- Título do Livro -->
-      <ng-container matColumnDef="_idArtes">
+      <ng-container matColumnDef="tituloArtes">
         <th mat-header-cell *matHeaderCellDef> Título </th>
-        <td mat-cell *matCellDef="let artes"> {{ artes._idArtes }} </td>
+        <td mat-cell *matCellDef="let artes"> {{ artes.tituloArtes }} </td>
       </ng-container>
 
       <!-- Autor -->
@@ -41,7 +41,7 @@
 
       <!-- Ano de Publicação -->
       <ng-container matColumnDef="anoArtes">
-        <th mat-header-cell *matHeaderCellDef> Ano </th>
+        <th mat-header-cell *matHeaderCellDef> Ano da Edição </th>
         <td mat-cell *matCellDef="let artes"> {{ artes.anoArtes }} </td>
       </ng-container>
 

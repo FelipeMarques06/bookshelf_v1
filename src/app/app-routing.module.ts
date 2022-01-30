@@ -11,6 +11,7 @@ import { canActivate, redirectUnauthorizedTo, redirectLoggedInTo } from '@angula
 import { PsicologiaComponent } from './psicologia/psicologia/psicologia.component';
 import { TecnologiaComponent } from './tecnologia/tecnologia.component';
 import { ArtesComponent } from './artes/artes.component';
+import { DireitoComponent } from './direito/direito.component';
 
 const enviarSemLogin = () => redirectUnauthorizedTo(['/app-app-cadastro']);
 
@@ -47,6 +48,10 @@ const routes: Routes = [
   },
   {
     path: 'empreendedorismo', component: EmpreendedorismoComponent,
+    ...canActivate(enviarSemLogin)
+  },
+  {
+    path: 'direito', component: DireitoComponent,
     ...canActivate(enviarSemLogin)
   },
   {
