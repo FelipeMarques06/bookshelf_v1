@@ -6,5 +6,6 @@
   {"linkMenu": "/empreendedorismo", "labelMenu":"Livros de Empreendedorismo", "hab": true},
   {"linkMenu": "/psicologia", "labelMenu":"Livros de Psicologia", "hab": true},
   {"linkMenu": "/teatro", "labelMenu":"Livros de Teatro", "hab": true},
-  {"linkMenu": "/tecnologia", "labelMenu":"Livros de Tecnologia", "hab": true}
+  {"linkMenu": "/tecnologia", "labelMenu":"Livros de Tecnologia", "hab": true},
+  {"linkMenu": "/direito", "labelMenu":"Livros de Direito", "hab": true}
 ]
