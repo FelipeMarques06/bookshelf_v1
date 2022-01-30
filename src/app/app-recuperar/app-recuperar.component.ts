@@ -40,7 +40,7 @@ export class AppRecuperarComponent implements OnInit {
           this.toast.success('Enviado! Confira seu email!')
         },
         error: (err) => {
-          this.toast.error(err.code)
+          this.toast.error('Email informado não encontrado!')
         }
       })
     }

@@ -1,9 +1,15 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-      <img mat-card-image [src]="logoMenu"  alt="Imagem do logo no menu">
+    <img mat-card-image [src]="logoMenu"  alt="Imagem do logo no menu">
+    <div class="emailLateral"*ngIf="usuario$ | async as usuario">
+      <p>
+        <span matBadge="4" matBadgeOverlap="false">{{usuario.email}}</span>
+      </p>
+    </div>
+    <mat-divider></mat-divider>
     <mat-nav-list *ngFor="let itemMenu of itensMenu$ | async; index as i">
-      <a mat-list-item *ngIf="itemMenu.hab === true" [href]="itemMenu.linkMenu">{{itemMenu.labelMenu}}</a>
+    <a mat-list-item *ngIf="itemMenu.hab === true" [href]="itemMenu.linkMenu">{{itemMenu.labelMenu}}</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -28,6 +34,7 @@
       </ng-template>
     </mat-toolbar>
     <mat-menu #usuarioMenu="matMenu" >
+      <button mat-menu-item routerLink="/perfil" matTooltip="Exibir informações do perfil">MEU PERFIL</button>
       <button mat-menu-item (click)="sairUsuario()" matTooltip="Sair da conta">LOGOUT</button>
     </mat-menu>
     <router-outlet></router-outlet>
