@@ -42,6 +42,7 @@ import { TecnologiaComponent } from './tecnologia/tecnologia.component';
 import { AppRecuperarComponent } from './app-recuperar/app-recuperar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DireitoComponent } from './direito/direito.component';
+import { PerfilComponent } from './perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +59,8 @@ import { DireitoComponent } from './direito/direito.component';
     TeatroComponent,
     AppRecuperarComponent,
     EmpreendedorismoComponent,
-    DireitoComponent
+    DireitoComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

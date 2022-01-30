@@ -1,3 +1,4 @@
+import { PerfilComponent } from './perfil/perfil.component';
 import { EmpreendedorismoComponent } from './empreendedorismo/empreendedorismo.component';
 import { AppRecuperarComponent } from './app-recuperar/app-recuperar.component';
 import { TeatroComponent } from './teatro/teatro/teatro.component';
@@ -53,6 +54,10 @@ const routes: Routes = [
   {
     path: 'direito', component: DireitoComponent,
     ...canActivate(enviarSemLogin)
+  },
+  {
+    path: 'perfil', component: PerfilComponent,
+
   },
   {
     path: 'recuperar', component: AppRecuperarComponent,
