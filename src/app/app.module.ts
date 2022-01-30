@@ -1,3 +1,4 @@
+import { RecaptchaModule } from 'ng-recaptcha';
 import { EmpreendedorismoComponent } from './empreendedorismo/empreendedorismo.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
@@ -87,6 +88,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatStepperModule,
     FormsModule,
     MatSnackBarModule,
+    RecaptchaModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
