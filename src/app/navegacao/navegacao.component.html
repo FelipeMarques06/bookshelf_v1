@@ -8,10 +8,35 @@
       </p>
     </div>
     <mat-divider></mat-divider>
-    <mat-nav-list *ngFor="let itemMenu of itensMenu$ | async; index as i">
-    <a mat-list-item *ngIf="itemMenu.hab === true" [href]="itemMenu.linkMenu">{{itemMenu.labelMenu}}</a>
-    </mat-nav-list>
+    <!-- Menu Lateral - Informações Gerais -->
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Menu Principal
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list *ngFor="let itemMenu of itensMenu$ | async; index as i">
+          <a mat-list-item *ngIf="itemMenu.hab === true" [href]="itemMenu.linkMenu">{{itemMenu.labelMenu}}</a>
+          </mat-nav-list>
+      </mat-expansion-panel>
+    </mat-accordion>
+
+     <!-- Menu Lateral - Informações de Livros -->
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Livros
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list *ngFor="let livroMenu of livrosMenu$ | async; index as i">
+            <a mat-list-item *ngIf="livroMenu.hab === true" [href]="livroMenu.linkMenu">{{livroMenu.labelMenu}}</a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-accordion>
   </mat-sidenav>
+
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
