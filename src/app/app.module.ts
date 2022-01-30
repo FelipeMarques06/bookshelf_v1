@@ -40,6 +40,7 @@ import { ReportagemComponent } from './reportagem/reportagem.component';
 import { TeatroComponent } from './teatro/teatro/teatro.component';
 import { TecnologiaComponent } from './tecnologia/tecnologia.component';
 import { AppRecuperarComponent } from './app-recuperar/app-recuperar.component';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { AppRecuperarComponent } from './app-recuperar/app-recuperar.component';
     LayoutModule,
     MatToolbarModule,
     MatButtonModule,
+    MatTooltipModule,
     MatSidenavModule,
     MatIconModule,
     MatListModule,

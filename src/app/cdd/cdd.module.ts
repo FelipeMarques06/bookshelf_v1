@@ -1,5 +1,7 @@
+import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 import { AppMaterialModule } from '../app-compartilhado/app-material/app-material.module';
 import { AppCompartilhadoModule } from './../app-compartilhado/app-compartilhado.module';
@@ -15,7 +17,9 @@ import { ClassesComponent } from './classes/classes.component';
     CommonModule,
     CddRoutingModule,
     AppMaterialModule,
-    AppCompartilhadoModule
+    AppCompartilhadoModule,
+    MatTooltipModule,
+    MatButtonModule
   ]
 })
 export class CddModule { }
