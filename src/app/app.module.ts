@@ -40,6 +40,7 @@ import { ReportagemComponent } from './reportagem/reportagem.component';
 import { TeatroComponent } from './teatro/teatro/teatro.component';
 import { TecnologiaComponent } from './tecnologia/tecnologia.component';
 import { AppRecuperarComponent } from './app-recuperar/app-recuperar.component';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import { AppRecuperarComponent } from './app-recuperar/app-recuperar.component';
     MatStepperModule,
     FormsModule,
     MatSnackBarModule,
+    RecaptchaModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

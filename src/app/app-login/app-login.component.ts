@@ -23,6 +23,8 @@ export class AppLoginComponent {
   });
 
   hasUnitNumber=false;
+  tentativas = 0
+  captcha!: string
 
   constructor(
     private loginBuilder: FormBuilder,
@@ -43,6 +45,7 @@ export class AppLoginComponent {
     }
     loginFirebase(){
       if(!this.formularioLogin.valid){
+        this.tentativas++
         return;
       }
       const {email, senha} = this.formularioLogin.value;
@@ -54,7 +57,11 @@ export class AppLoginComponent {
       ).subscribe(()=>{
         this.formularioLogin.reset();
         this.rotas.navigate(['/cdd'])
+        this.fecharDialogo()
       })
+      setTimeout(() => {
+        this.tentativas++
+      }, 700)
 
       this.autenticacaoFirebaseService.loginUsuario(email, senha).subscribe({
 
@@ -77,6 +84,12 @@ export class AppLoginComponent {
       }
     })
   }
+
+  zerarTentativas(resposta: string) {
+    this.tentativas = 0
+    this.captcha = resposta
+  }
+
   fecharDialogo() {
     this.fecharTela.closeAll();
   }
