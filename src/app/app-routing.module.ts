@@ -13,12 +13,13 @@ import { PsicologiaComponent } from './psicologia/psicologia/psicologia.componen
 import { TecnologiaComponent } from './tecnologia/tecnologia.component';
 import { ArtesComponent } from './artes/artes.component';
 import { DireitoComponent } from './direito/direito.component';
+import { SugestoesComponent } from './sugestoes/sugestoes.component';
 
 const enviarSemLogin = () => redirectUnauthorizedTo(['/app-app-cadastro']);
 
 const routes: Routes = [
   {
-    path: '', pathMatch: 'full', redirectTo: 'app-app-cadastro'
+    path: '', pathMatch: 'full', redirectTo: 'feed'
   },
   {
     path:'app-app-cadastro', component: AppCadastroComponent
@@ -57,7 +58,11 @@ const routes: Routes = [
   },
   {
     path: 'perfil', component: PerfilComponent,
-
+    ...canActivate(enviarSemLogin)
+  },
+  {
+    path: 'sugestoes', component: SugestoesComponent,
+    ...canActivate(enviarSemLogin)
   },
   {
     path: 'recuperar', component: AppRecuperarComponent,
