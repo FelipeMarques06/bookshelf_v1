@@ -1,3 +1,4 @@
+import { NavegacaoBibliService } from './../servicosInterface/navegacao-bibli.service';
 import { NavegacaoLivrosService } from './../servicosInterface/navegacao-livros.service';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, HostListener } from '@angular/core';
@@ -11,6 +12,7 @@ import { AppLoginComponent } from './../app-login/app-login.component';
 import { MenuNavegador } from './../modelosInterface/menuNavegador';
 import { AutenticacaoFirebaseService } from './../servicosInterface/autenticacao-firebase.service';
 import { NavegacaoService } from './../servicosInterface/navegacao.service';
+import { BibliNavegador } from '../modelosInterface/bibliNavegador';
 
 @Component({
   selector: 'app-navegacao',
@@ -26,8 +28,10 @@ export class NavegacaoComponent {
   lIcone=80;
   aIcone=80;
   //Controle das rotas do menu.
-  itensMenu$: Observable<MenuNavegador[]>
-  livrosMenu$: Observable<LivrosNavegador[]>
+  itensMenu$: Observable<MenuNavegador[]>;
+  livrosMenu$: Observable<LivrosNavegador[]>;
+  bibliMenu$: Observable<BibliNavegador[]>;
+
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
       map(result => result.matches),
@@ -39,7 +43,8 @@ export class NavegacaoComponent {
       private rotas: Router,
       private autenticacaoFirebaseService: AutenticacaoFirebaseService,
       private navegadorService: NavegacaoService,
-      private navegacaoLivrosService: NavegacaoLivrosService
+      private navegacaoLivrosService: NavegacaoLivrosService,
+      private navegacaoBibliService: NavegacaoBibliService
   ) {
       this.itensMenu$ = navegadorService.listagemMenu()
       .pipe(
@@ -53,7 +58,12 @@ export class NavegacaoComponent {
           return of([])
         })
       )
-
+      this.bibliMenu$ = navegacaoBibliService.listagemMenu()
+      .pipe(
+        catchError(error =>{
+          return of([])
+        })
+      )
     }
 
     abrirLogin(erroMsg: string){

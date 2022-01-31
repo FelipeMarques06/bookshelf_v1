@@ -35,6 +35,21 @@
           </mat-nav-list>
         </mat-expansion-panel>
       </mat-accordion>
+
+      <!-- Menu Lateral - Informações de Biblioteconomia -->
+      <mat-accordion>
+        <mat-expansion-panel hideToggle>
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Biblioteconomia
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-nav-list *ngFor="let bibliMenu of bibliMenu$ | async; index as i">
+            <a mat-list-item *ngIf="bibliMenu.hab === true" [href]="bibliMenu.linkMenu">{{bibliMenu.labelMenu}}</a>
+          </mat-nav-list>
+        </mat-expansion-panel>
+      </mat-accordion>
+
   </mat-sidenav>
 
   <mat-sidenav-content>

@@ -6,7 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path:'', component:BibvirtuaisComponent
+    path:'bibvirtuais', component:BibvirtuaisComponent
   },
   {
     path:'basedados', component:BasedadosComponent
