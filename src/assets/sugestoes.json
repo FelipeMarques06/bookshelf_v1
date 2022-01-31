@@ -1,0 +1,34 @@
+[
+  {
+    "titulo": "Pequena coreografia do adeus",
+    "subtitulo":"Aline Bei",
+    "img": "../../assets/imagens/sugestao1.jpg",
+    "conteudo":"“Aline Bei narra como quem se posiciona à beira do abismo, o corpo em espera, o instante que se aproxima. Ler Pequena coreografia do adeus é acompanhar essa queda, íngreme e definitiva, mas também sublime e transformadora.” ― Carola Saavedra",
+    "cols": 1,
+    "rows": 2
+  },
+  {
+    "titulo": "O guia do mochileiro das galáxias - Edição Ilustrada",
+    "subtitulo":"Douglas Adams",
+    "img": "../../assets/imagens/sugestao2.jpg",
+    "conteudo":"Arthur Dent já estava tendo um dia péssimo antes mesmo de a Terra ser demolida para abrir espaço para uma via expressa hiperespacial. E depois disso as coisas ficaram muito, muito piores. Com apenas uma toalha, um peixinho amarelo e um livro, Arthur vai ser obrigado a navegar por um universo hostil na companhia de alienígenas pouco confiáveis.",
+    "cols": 1,
+    "rows": 2
+  },
+  {
+    "titulo": "Amar-se: Uma Viagem em Busca de Si Mesmo",
+    "subtitulo":"Marcos Lacerda",
+    "img": "../../assets/imagens/sugestao3.jpg",
+    "conteudo":" ''UMA VIAGEM TODA SUA! Que delícia é viajar! Fazer os preparativos, escolher o roteiro, procurar informações sobre os melhores lugares para se hospedar, os pontos turísticos... Mas, e quando a viagem tem como destino você mesmo? Como fazer as reservas, preparar as malas e cair na estrada? Pois é nesse tour que vamos embarcar. E de primeira classe!''",
+    "cols": 1,
+    "rows": 2
+  },
+  {
+    "titulo": "Fascínio da nobreza",
+    "subtitulo":" Lorraine Heath ",
+    "img": "../../assets/imagens/sugestao4.jpg",
+    "conteudo":"Fancy Trewlove sempre esteve determinada a cumprir o desejo de sua mãe de ver a filha casada com um nobre. Seu intelecto e sua formação a tornam a esposa perfeita para qualquer cavalheiro… desde que esteja disposto a ignorar sua origem escandalosa! Mas os planos da jovem são postos em xeque quando um plebeu misterioso começa a visitar sua livraria.",
+    "cols": 1,
+    "rows": 2
+  }
+]

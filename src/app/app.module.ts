@@ -1,3 +1,4 @@
+import { SugestoesComponent } from './sugestoes/sugestoes.component';
 import { EmpreendedorismoComponent } from './empreendedorismo/empreendedorismo.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import { HttpClientModule } from '@angular/common/http';
@@ -45,6 +46,7 @@ import { DireitoComponent } from './direito/direito.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,7 +63,8 @@ import { RecaptchaModule } from 'ng-recaptcha';
     AppRecuperarComponent,
     EmpreendedorismoComponent,
     DireitoComponent,
-    PerfilComponent
+    PerfilComponent,
+    SugestoesComponent
   ],
   imports: [
     BrowserModule,

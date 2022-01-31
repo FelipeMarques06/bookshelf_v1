@@ -1,0 +1,24 @@
+<div class="grid-container" *ngIf="cards$ | async as card; else loading">
+  <h1 class="mat-h1" *ngIf="usuario$ | async as usuario">Sugestões de Livros</h1>
+  <p class="text">Estas são algumas das sugestões de livros que a BookShlef tem para você!</p>
+  <mat-grid-list cols="2" rowHeight="180px">
+    <mat-grid-tile *ngFor="let card of cards$ | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <!-- <div mat-card-avatar class="example-header-image"></div> -->
+          <mat-card-title>{{card.titulo}}</mat-card-title>
+          <mat-card-subtitle>{{card.subtitulo}}</mat-card-subtitle>
+          <img mat-card-image class="imgcard" [src]="card.img" [alt]="card.titulo">
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <div>{{card.conteudo}}</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<ng-template #loading>
+  <div class="loading-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
