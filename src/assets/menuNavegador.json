@@ -1,5 +1,5 @@
 [
-  {"linkMenu": "/cdd", "labelMenu":"Classes Dewey", "hab": true},
-  {"linkMenu": "/feed", "labelMenu":"Feed Notícias", "hab": true},
+  {"linkMenu": "/cdd", "labelMenu":"Classificação Decimal", "hab": true},
+  {"linkMenu": "/feed", "labelMenu":"Feed de Notícias", "hab": true},
   {"linkMenu": "/reportagem", "labelMenu":"Especial do Mês", "hab": true}
 ]
