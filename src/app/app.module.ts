@@ -43,6 +43,7 @@ import { AppRecuperarComponent } from './app-recuperar/app-recuperar.component';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { DireitoComponent } from './direito/direito.component';
 import { PerfilComponent } from './perfil/perfil.component';
+import { RecaptchaModule } from 'ng-recaptcha';
 
 @NgModule({
   declarations: [
@@ -91,6 +92,7 @@ import { PerfilComponent } from './perfil/perfil.component';
     MatStepperModule,
     FormsModule,
     MatSnackBarModule,
+    RecaptchaModule
   ],
   providers: [],
   bootstrap: [AppComponent]
