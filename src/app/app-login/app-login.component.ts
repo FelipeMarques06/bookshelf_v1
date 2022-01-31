@@ -57,9 +57,9 @@ export class AppLoginComponent {
         })
       ).subscribe(()=>{
         this.formularioLogin.reset();
+        this.tentativas = 0
         this.rotas.navigate(['/cdd'])
         this.fecharDialogo()
-        this.tentativas = 0
       })
       setTimeout(() => {
         this.tentativas++
