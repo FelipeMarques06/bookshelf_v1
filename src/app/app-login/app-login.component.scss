@@ -64,3 +64,25 @@ mat-card-footer{
 .text-center {
   text-align: center;
 }
+
+.tentativas{
+  background-color:#F44336;
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+  margin: 0 auto;
+  padding: 0px 30px;
+  width: 50%;
+}
+.tentativas-p{
+  margin-top: 15px;
+}
+.tentativas-n {
+  color: #F44336;
+}
+
+.captcha {
+  display: flex;
+  justify-content: center;
+  margin-top: 8px;
+}

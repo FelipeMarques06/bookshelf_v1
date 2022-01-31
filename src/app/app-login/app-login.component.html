@@ -18,10 +18,11 @@
           <mat-error *ngIf="senha?.errors?.['required']">Esqueceu a senha</mat-error>
         </mat-form-field>
         <mat-card-footer>
-          <button mat-raised-button color="accent" type="submit" (click)="fecharDialogo()">Entrar</button>
-          <button mat-raised-button mat-dialog-close color="primary">Fechar</button>
+          <button mat-raised-button color="accent" type="submit" *ngIf="tentativas < 3">Entrar</button>
+          <button mat-raised-button mat-dialog-close color="primary" [ngClass]="{'tentativas': tentativas >= 3}">Fechar</button>
           <a routerLink="/recuperar">Esqueci minha senha</a>
         </mat-card-footer>
+        <p class="tentativas-p" *ngIf="tentativas > 0">Numero de tentativas de login: <strong class="tentativas-n">{{tentativas}}</strong></p>
         <div class="loginGoogle">
           <span>Ou entre com sua conta Google: </span>
           <button type="button" (click)="abrirLoginGoogle()" mat-raised-button >
@@ -34,3 +35,8 @@
       e venha fazer parte desta comunidade de leitores</span>
   </mat-card>
 </div>
+<div class="captcha" [hidden]="captcha" *ngIf="tentativas >= 3">
+  <re-captcha siteKey="6Lc_SEYeAAAAABDriNFirQpp5E0xMFI1RY9x7Tk8" (resolved)="resolverCaptcha($event)">
+  </re-captcha>
+</div>
+<div [hidden]="!captcha"></div>
