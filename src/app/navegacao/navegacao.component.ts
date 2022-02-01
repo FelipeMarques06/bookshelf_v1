@@ -21,6 +21,8 @@ import { BibliNavegador } from '../modelosInterface/bibliNavegador';
 })
 export class NavegacaoComponent {
   usuario$ = this.autenticacaoFirebaseService.usuarioLogado$;
+  cor = "primary"
+  corBotao = "accent"
   //Itens co menu principal.
   logoMenu='../../assets/imagens/logoBS4.png';
   //Itens de icones e imagens de navegação.
@@ -64,6 +66,16 @@ export class NavegacaoComponent {
           return of([])
         })
       )
+    }
+
+    mudarCor() {
+      if(this.cor === "primary"){
+        this.cor = "accent"
+        this.corBotao = "primary"
+      } else {
+        this.cor = "primary"
+        this.corBotao = "accent"
+      }
     }
 
     abrirLogin(erroMsg: string){

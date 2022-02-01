@@ -1,7 +1,7 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <img mat-card-image [src]="logoMenu"  alt="Imagem do logo no menu">
+    <img mat-card-image [src]="logoMenu" width="231" alt="Imagem do logo no menu">
     <div class="emailLateral"*ngIf="usuario$ | async as usuario">
       <p>
         <span matBadge="4" matBadgeOverlap="false">{{usuario.email}}</span>
@@ -53,14 +53,17 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar [color]="cor">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Menu BookShelf Lateral">menu</mat-icon>
       </button>
       <img mat-card-sm-image *ngIf="innerWidth > 600" [width]="lIcone" [height]="aIcone" [src]="iconeGeral">
+      <button mat-mini-fab [color]="corBotao" (click)="mudarCor()">
+        <mat-icon>format_color_fill</mat-icon>
+      </button>
       <ng-container *ngIf="usuario$ | async as usuario; else botaoLogin">
-        <button mat-raised-button color="primary" [matMenuTriggerFor]="usuarioMenu" matTooltip="Conta BookShelf">
+        <button mat-raised-button [color]="cor" [matMenuTriggerFor]="usuarioMenu" matTooltip="Conta BookShelf">
           <img class="imgPerfil" src= {{usuario.photoURL}} alt="foto de perfil">
           <!-- <mat-icon *ngIf="innerWidth > 600" class="mat-18">local_library</mat-icon> -->
           {{usuario.displayName}}
@@ -68,7 +71,7 @@
         </button>
       </ng-container>
       <ng-template #botaoLogin>
-        <button mat-raised-button color="primary" (click)="abrirLogin('Tela de Login')" matTooltip="Entre com sua conta">
+        <button mat-raised-button [color]="cor" (click)="abrirLogin('Tela de Login')" matTooltip="Entre com sua conta">
           Login
         </button>
       </ng-template>
