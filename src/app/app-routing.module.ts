@@ -94,6 +94,11 @@ const routes: Routes = [
     ...canActivate(enviarSemLogin)
   },
   {
+    path: 'criticas',
+    loadChildren: () => import('./criticas/criticas.module').then(c => c.CriticasModule),
+    ...canActivate(enviarSemLogin)
+  },
+  {
     path:'**',
     component: AppNotFoundComponent
   }
