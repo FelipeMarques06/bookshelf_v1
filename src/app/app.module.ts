@@ -1,3 +1,4 @@
+import { DuvidasComponent } from './duvidas/duvidas.component';
 import { SagasComponent } from './sagas/sagas.component';
 import { SugestoesComponent } from './sugestoes/sugestoes.component';
 import { EmpreendedorismoComponent } from './empreendedorismo/empreendedorismo.component';
@@ -47,6 +48,7 @@ import { DireitoComponent } from './direito/direito.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RecaptchaModule } from 'ng-recaptcha';
 import { SagasDialogoComponent } from './sagas-dialogo/sagas-dialogo.component';
+import { AjudaComponent } from './ajuda/ajuda.component';
 
 
 @NgModule({
@@ -68,7 +70,9 @@ import { SagasDialogoComponent } from './sagas-dialogo/sagas-dialogo.component';
     PerfilComponent,
     SugestoesComponent,
     SagasComponent,
-    SagasDialogoComponent
+    SagasDialogoComponent,
+    DuvidasComponent,
+    AjudaComponent
   ],
   imports: [
     BrowserModule,
