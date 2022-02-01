@@ -1,3 +1,4 @@
+import { IsbnComponent } from './isbn/isbn.component';
 import { AbntComponent } from './abnt/abnt.component';
 import { BasedadosComponent } from './basedados/basedados.component';
 import { BibvirtuaisComponent } from './bibvirtuais/bibvirtuais.component';
@@ -13,6 +14,9 @@ const routes: Routes = [
   },
   {
     path:'abnt', component:AbntComponent
+  },
+  {
+    path:'isbn', component:IsbnComponent
   },
 ];
 

@@ -69,13 +69,13 @@
       </ng-container>
       <ng-template #botaoLogin>
         <button mat-raised-button color="primary" (click)="abrirLogin('Tela de Login')" matTooltip="Entre com sua conta">
-          LOGIN
+          Login
         </button>
       </ng-template>
     </mat-toolbar>
     <mat-menu #usuarioMenu="matMenu" >
-      <button mat-menu-item routerLink="/perfil" matTooltip="Exibir informações do perfil">MEU PERFIL</button>
-      <button mat-menu-item (click)="sairUsuario()" matTooltip="Sair da conta">LOGOUT</button>
+      <button mat-menu-item routerLink="/perfil" matTooltip="Exibir informações do perfil">Meu Perfil</button>
+      <button mat-menu-item (click)="sairUsuario()" matTooltip="Sair da conta">Logout</button>
     </mat-menu>
     <router-outlet></router-outlet>
   </mat-sidenav-content>

@@ -9,6 +9,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BasedadosComponent } from './basedados/basedados.component';
 import { AbntComponent } from './abnt/abnt.component';
+import { IsbnComponent } from './isbn/isbn.component';
 
 
 
@@ -16,7 +17,8 @@ import { AbntComponent } from './abnt/abnt.component';
   declarations: [
     BasedadosComponent,
     AbntComponent,
-    BibvirtuaisComponent
+    BibvirtuaisComponent,
+    IsbnComponent
   ],
   imports: [
     CommonModule,
