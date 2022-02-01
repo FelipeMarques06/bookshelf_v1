@@ -96,24 +96,23 @@ export class AppCadastroComponent implements OnInit {
       this.autenticacaoFirebaseService.cadastrarUsuario(nome, email, senha, url).subscribe({
 
         error: (err) => {
-          let message = 'Ocorreu um erro'
+          let message = 'Ocorreu um erro!'
           switch (err.code) {
             case 'auth/invalid-email':
               message = 'Email inválido';
               break;
-            case 'auth/email-already-exists':
+            case 'auth/email-already-in-use':
               message = 'Email já cadastrado';
               break;
             case 'auth/weak-password':
               message = 'A senha deve ter 6 ou mais caracteres';
               break;
-            case 'auth/email-already-in-use':
-              message = 'Email já cadastrado'
+            default:
+              message = 'Erro desconhecido'
         }
         this.toast.show(message);
       }
     })
-
   }
 
   ngOnInit(): void {
