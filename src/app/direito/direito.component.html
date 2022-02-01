@@ -1,12 +1,10 @@
 <mat-card>
   <div *ngIf=" livrosDireito$ | async as livrosDireito; else loading;">
-     <mat-toolbar color="accent">
-       <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-         <mat-icon>menu</mat-icon>
-       </button>
-       <span>OS 10 PRINCIPAIS LIVROS DE DIREITO</span>
-       <span class="example-spacer"></span>
-     </mat-toolbar>
+    <mat-toolbar color="accent">
+      <div class="titulo">
+        <h1 class="mat-h1"> OS 10 PRINCIPAIS LIVROS DE DIREITO</h1>
+      </div>
+    </mat-toolbar>
      <table mat-table [dataSource]="livrosDireito" class="mat-elevation-z8">
 
        <!-- Ranking -->

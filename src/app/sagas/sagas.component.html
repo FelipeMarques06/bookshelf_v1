@@ -1,0 +1,28 @@
+<div class="grid-container" *ngIf="sagas$ | async as sagas; else loading">
+  <mat-toolbar color="accent">
+    <div class="titulo">
+      <h1 class="mat-h1"> 10 PRINCIPAIS SAGAS LITERÁRIAS</h1>
+    </div>
+  </mat-toolbar>
+  <mat-grid-list cols="2" rowHeight="350px">
+    <mat-grid-tile *ngFor="let sagas of sagas$ | async" [colspan]="sagas.cols" [rowspan]="sagas.rows">
+      <mat-card class="dashboard-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{sagas.titulo}}</mat-card-title>
+          <mat-card-subtitle>{{sagas.autor}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="imgcard" [src]="sagas.img" [alt]="sagas.titulo" (click)="abrirSagas(sagas.livros)" >
+        <mat-card-content class="dashboard-card-content">
+          <div>{{sagas.descricao}}</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<ng-template #loading>
+  <div class="loading-spinner">
+    <mat-spinner></mat-spinner>
+  </div>
+</ng-template>
+

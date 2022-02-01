@@ -1,3 +1,4 @@
+import { SagasComponent } from './sagas/sagas.component';
 import { SugestoesComponent } from './sugestoes/sugestoes.component';
 import { EmpreendedorismoComponent } from './empreendedorismo/empreendedorismo.component';
 import { LayoutModule } from '@angular/cdk/layout';
@@ -45,6 +46,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { DireitoComponent } from './direito/direito.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { RecaptchaModule } from 'ng-recaptcha';
+import { SagasDialogoComponent } from './sagas-dialogo/sagas-dialogo.component';
 
 
 @NgModule({
@@ -64,7 +66,9 @@ import { RecaptchaModule } from 'ng-recaptcha';
     EmpreendedorismoComponent,
     DireitoComponent,
     PerfilComponent,
-    SugestoesComponent
+    SugestoesComponent,
+    SagasComponent,
+    SagasDialogoComponent
   ],
   imports: [
     BrowserModule,

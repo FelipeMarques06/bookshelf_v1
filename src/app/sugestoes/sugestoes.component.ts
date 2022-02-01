@@ -4,7 +4,6 @@ import { catchError, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Sugestoes } from '../modelosInterface/sugestoes';
-import { AutenticacaoFirebaseService } from '../servicosInterface/autenticacao-firebase.service';
 import { SugestoesService } from '../servicosInterface/sugestoes.service';
 
 @Component({
@@ -15,7 +14,6 @@ import { SugestoesService } from '../servicosInterface/sugestoes.service';
 export class SugestoesComponent {
 
   cards$: Observable <Sugestoes[]>;
-  usuario$= this.autenticacaoFirebaseService.usuarioLogado$;
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
@@ -27,7 +25,6 @@ export class SugestoesComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    private autenticacaoFirebaseService: AutenticacaoFirebaseService,
     private sugestoesService: SugestoesService,
   ) {
     this.cards$ = sugestoesService.listagemSugestoes()
