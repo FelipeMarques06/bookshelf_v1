@@ -105,7 +105,7 @@ export class AppCadastroComponent implements OnInit {
               message = 'Email já cadastrado';
               break;
             case 'auth/weak-password':
-              message = 'A senha deve 6 ou mais caracteres';
+              message = 'A senha deve ter 6 ou mais caracteres';
               break;
             case 'auth/email-already-in-use':
               message = 'Email já cadastrado'

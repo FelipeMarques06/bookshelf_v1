@@ -1,3 +1,5 @@
+import { AjudaComponent } from './ajuda/ajuda.component';
+import { DuvidasComponent } from './duvidas/duvidas.component';
 import { PerfilComponent } from './perfil/perfil.component';
 import { EmpreendedorismoComponent } from './empreendedorismo/empreendedorismo.component';
 import { AppRecuperarComponent } from './app-recuperar/app-recuperar.component';
@@ -67,6 +69,14 @@ const routes: Routes = [
   },
   {
     path: 'sagas', component: SagasComponent,
+    ...canActivate(enviarSemLogin)
+  },
+  {
+    path: 'duvidas', component: DuvidasComponent,
+    ...canActivate(enviarSemLogin)
+  },
+  {
+    path: 'ajuda', component: AjudaComponent,
     ...canActivate(enviarSemLogin)
   },
   {
