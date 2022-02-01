@@ -1,5 +1,6 @@
 .texto {
   font-size: 20px;
+  text-align: justify;
 }
 
 .titulo {
@@ -16,12 +17,16 @@ mat-grid-tile {
   margin: 0 auto;
 }
 
-.imgtitulo{
+.imgtitulo {
   display: block;
   width: 100%;
  }
 
- .loading-spinner{
+ .imagem {
+   height: 95%;
+ }
+
+ .loading-spinner {
   background-color: rgb(221, 221, 221);
   display: flex;
   align-items: center;
