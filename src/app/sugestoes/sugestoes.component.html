@@ -1,6 +1,9 @@
 <div class="grid-container" *ngIf="cards$ | async as card; else loading">
-  <h1 class="mat-h1" *ngIf="usuario$ | async as usuario">Sugestões de Livros</h1>
-  <p class="text">Estas são algumas das sugestões de livros que a BookShlef tem para você!</p>
+  <mat-toolbar color="accent">
+    <div class="titulo">
+      <h1 class="mat-h1"> SUGESTÕES DE LIVROS</h1>
+    </div>
+  </mat-toolbar>
   <mat-grid-list cols="2" rowHeight="180px">
     <mat-grid-tile *ngFor="let card of cards$ | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">

@@ -5,5 +5,6 @@
   {"linkMenu": "/psicologia", "labelMenu":"Livros de Psicologia", "hab": true},
   {"linkMenu": "/teatro", "labelMenu":"Livros de Teatro", "hab": true},
   {"linkMenu": "/tecnologia", "labelMenu":"Livros de Tecnologia", "hab": true},
-  {"linkMenu": "/sugestoes", "labelMenu":"Sugestões de Livros", "hab": true}
+  {"linkMenu": "/sagas", "labelMenu":"Sagas Literárias", "hab": true},
+  {"linkMenu": "/sugestoes", "labelMenu":"Sugestões", "hab": true}
 ]

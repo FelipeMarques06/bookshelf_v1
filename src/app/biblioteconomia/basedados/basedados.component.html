@@ -1,6 +1,10 @@
 <div class="grid-container" *ngIf="cards$ | async as card; else loading">
-  <h1 class="mat-h1">Bases de Dados de Biblioteconomia</h1>
-  <p class="text">Estas são algumas Bases de Dados na área de Biblioteconomia</p>
+  <mat-toolbar color="accent">
+    <div class="titulo">
+      <h1 class="mat-h1"> BASES DE DADOS DE BIBLIOTECONOMIA </h1>
+    </div>
+  </mat-toolbar>
+  <h2 class="mat-h2">Estas são algumas Bases de Dados na área de Biblioteconomia:</h2>
   <mat-grid-list cols="2" rowHeight="300px">
     <mat-grid-tile class="container" *ngFor="let card of cards$ | async" [colspan]="card.cols" [rowspan]="card.rows">
       <mat-card class="dashboard-card">

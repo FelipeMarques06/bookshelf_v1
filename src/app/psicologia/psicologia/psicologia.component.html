@@ -1,11 +1,9 @@
 <mat-card>
   <div *ngIf=" livrosPsicologia$ | async as livrosPsicologia; else loading;">
     <mat-toolbar color="accent">
-      <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" matTooltip="Opções">
-        <mat-icon>menu</mat-icon>
-      </button>
-      <span>OS 10 PRINCIPAIS LIVROS DA PSICOLOGIA CLÁSSICA E CONTEMPORÂNEA</span>
-      <span class="example-spacer"></span>
+      <div class="titulo">
+        <h1 class="mat-h1"> OS 10 PRINCIPAIS LIVROS DA PSICOLOGIA CLÁSSICA E CONTEMPORÂNEA</h1>
+      </div>
     </mat-toolbar>
     <table mat-table [dataSource]="livrosPsicologia" class="mat-elevation-z8">
 

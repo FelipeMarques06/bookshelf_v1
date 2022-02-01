@@ -1,11 +1,13 @@
 <div class="grid-container">
-  <h1 class="mat-h1" *ngIf="usuario$ | async as usuario">Reportagens especiais do mês de janeiro</h1>
-
-  <p>Os livros exibidos são destaque do mês de janeiro de 2022. Com gêneros variados, eles possuem grande
+  <mat-toolbar color="accent">
+    <div class="titulo">
+      <h1 class="mat-h1" *ngIf="usuario$ | async as usuario"> REPORTAGENS ESPECIAIS DO MÊS DE JANEIRO</h1>
+    </div>
+  </mat-toolbar>
+  <p class="mat-h3">Os livros exibidos são destaque do mês de janeiro de 2022. Com gêneros variados, eles possuem grande
     apelo por bem estar pessoal, criatividade e autoconhecimento. A literatura brasileira é rica de grandes
     obras escritas por artistas consagrados e reconhecidos mundialmente.
   </p>
-
   <mat-grid-list cols="2" rowHeight="350px">
     <mat-grid-tile *ngFor="let reportagem of reportagem$ | async" [colspan]="reportagem.cols" [rowspan]="reportagem.rows">
       <mat-card class="reportagem-card">
