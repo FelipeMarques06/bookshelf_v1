@@ -1,7 +1,9 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
-    <img mat-card-image [src]="logoMenu" width="231" alt="Imagem do logo no menu">
+    <a href="/feed">
+      <img mat-card-image [src]="logoMenu" width="231" alt="Imagem do logo no menu">
+    </a>
     <div class="emailLateral"*ngIf="usuario$ | async as usuario">
       <p>
         <span matBadge="4" matBadgeOverlap="false">{{usuario.email}}</span>
