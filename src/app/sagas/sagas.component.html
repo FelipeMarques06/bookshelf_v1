@@ -1,24 +1,80 @@
-<div class="grid-container" *ngIf="sagas$ | async as sagas; else loading">
-  <mat-toolbar color="accent">
-    <div class="titulo">
-      <h1 class="mat-h1"> 10 PRINCIPAIS SAGAS LITERÁRIAS</h1>
+<div>
+  <!-- Resultado de busca -->
+  <div>
+    <div class="grid-container">
+      <mat-form-field appearance="fill" style="width: 100%; text-align: center;" >
+        <mat-label>Busque uma saga</mat-label>
+        <input matInput #searchInput />
+        <mat-icon matSuffix>search</mat-icon>
+      </mat-form-field>
     </div>
-  </mat-toolbar>
-  <mat-grid-list cols="2" rowHeight="350px">
-    <mat-grid-tile *ngFor="let sagas of sagas$ | async" [colspan]="sagas.cols" [rowspan]="sagas.rows">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{sagas.titulo}}</mat-card-title>
-          <mat-card-subtitle>{{sagas.autor}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image class="imgcard" [src]="sagas.img" [alt]="sagas.titulo" (click)="abrirSagas(sagas.livros)" >
-        <mat-card-content class="dashboard-card-content">
-          <div>{{sagas.descricao}}</div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+    <div class="grid-container" *ngIf="result$ | async as busca">
+      <mat-grid-list cols="2" rowHeight="350px">
+        <mat-grid-tile *ngFor="let busca of result$| async"  [colspan]="busca.cols" [rowspan]="busca.rows">
+          <mat-card class="dashboard-card">
+            <mat-card-header>
+              <div mat-card-avatar class="example-header-image"></div>
+              <mat-card-title>{{busca.titulo}}</mat-card-title>
+              <mat-card-subtitle>{{busca.autor}}</mat-card-subtitle>
+            </mat-card-header>
+            <img mat-card-image class="imgcard" [src]="busca.img" [alt]="busca.titulo" (click)="abrirSagas(busca.livros)" >
+            <mat-card-content class="dashboard-card-content">
+              <div>{{busca.descricao}}</div>
+            </mat-card-content>
+          </mat-card>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+
+  <div class="grid-container" *ngIf="sagas$ | async as sagas; else loading">
+    <mat-toolbar color="accent">
+      <div class="titulo">
+        <h1 class="mat-h1"> 10 PRINCIPAIS SAGAS LITERÁRIAS</h1>
+      </div>
+    </mat-toolbar>
+    <!-- <div>
+      <div>
+        <mat-form-field appearance="fill">
+          <mat-label>Buscar</mat-label>
+          <input matInput #searchInput />
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="grid-container" *ngIf="result$ | async as busca">
+        <mat-grid-list cols="2" rowHeight="350px">
+          <mat-grid-tile *ngFor="let busca of result$| async"  [colspan]="busca.cols" [rowspan]="busca.rows">
+            <mat-card class="dashboard-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>{{busca.titulo}}</mat-card-title>
+                <mat-card-subtitle>{{busca.autor}}</mat-card-subtitle>
+              </mat-card-header>
+              <img mat-card-image class="imgcard" [src]="busca.img" [alt]="busca.titulo" (click)="abrirSagas(busca.livros)" >
+              <mat-card-content class="dashboard-card-content">
+                <div>{{busca.descricao}}</div>
+              </mat-card-content>
+            </mat-card>
+          </mat-grid-tile>
+        </mat-grid-list>
+      </div>
+    </div> -->
+    <mat-grid-list cols="2" rowHeight="350px">
+      <mat-grid-tile *ngFor="let sagas of sagas$ | async" [colspan]="sagas.cols" [rowspan]="sagas.rows">
+        <mat-card class="dashboard-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>{{sagas.titulo}}</mat-card-title>
+            <mat-card-subtitle>{{sagas.autor}}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image class="imgcard" [src]="sagas.img" [alt]="sagas.titulo" (click)="abrirSagas(sagas.livros)" >
+          <mat-card-content class="dashboard-card-content">
+            <div>{{sagas.descricao}}</div>
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
 </div>
 <ng-template #loading>
   <div class="loading-spinner">
