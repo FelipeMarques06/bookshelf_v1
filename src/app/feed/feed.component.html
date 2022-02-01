@@ -1,11 +1,11 @@
 <div class="campoPesquisa">
-  <form>
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Busca</mat-label>
+  <div class="grid-container">
+    <mat-form-field class="example-full-width" appearance="fill" style="width: 100%; text-align: center;">
+      <mat-label>Busque uma notícia</mat-label>
       <input matInput #searchInput>
       <mat-icon matSuffix>search</mat-icon>
     </mat-form-field>
-  </form>
+  </div>
 </div>
 
 <div *ngIf="results$ | async as search">
@@ -36,7 +36,7 @@
 </div>
 
 <div class="grid-container" *ngIf="cards$ | async as card; else loading">
-  <h1 class="mat-h1" *ngIf="usuario$ | async as usuario">Feed de notícias: {{usuario.displayName}}</h1>
+  <h1 class="mat-h1" *ngIf="usuario$ | async as usuario">Bem vindo(a), {{usuario.displayName}}. Esse é o seu feed de notícias:</h1>
   <form class="example-form">
 
   </form>
