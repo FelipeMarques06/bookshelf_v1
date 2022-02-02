@@ -34,14 +34,12 @@
     </mat-grid-tile>
   </mat-grid-list>
 </div>
-
 <div class="grid-container" *ngIf="cards$ | async as card; else loading">
-  <h1 class="mat-h1" *ngIf="usuario$ | async as usuario">Bem vindo(a), {{usuario.displayName}}. Esse é o seu feed de notícias:</h1>
-  <form class="example-form">
+  <h1 class="mat-h1" *ngIf="usuario$ | async as usuario">Olá, {{usuario.displayName}}.</h1>
+  <h2 class="mat-h1">Seja bem vindo ao BookShelf!</h2>
+  <h2>Este é o seu Feed de Notícias.</h2>
 
-  </form>
-
-  <mat-grid-list [cols]="breakpoint" rowHeight="350px" (window:resize)="handleSize($event)">
+<mat-grid-list [cols]="breakpoint" rowHeight="350px" (window:resize)="handleSize($event)">
     <mat-grid-tile *ngFor="let card of cards$ | async"  [rowspan]="card.rows">
       <mat-card class="dashboard-card">
         <mat-card-header>
