@@ -1,3 +1,4 @@
+import { CriticaDialogoComponent } from './critica-dialogo/critica-dialogo.component';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -12,7 +13,8 @@ import { AppCompartilhadoModule } from '../app-compartilhado/app-compartilhado.m
 
 @NgModule({
   declarations: [
-    CriticaComponent
+    CriticaComponent,
+    CriticaDialogoComponent
   ],
   imports: [
     CommonModule,

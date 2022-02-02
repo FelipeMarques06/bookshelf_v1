@@ -21,6 +21,3 @@ export class CriticaDialogoComponent {
     this.resenhas$ = of (resenhas)
   }
 }
-
-
-
