@@ -16,6 +16,7 @@ export class CriticaComponent {
   criticas$: Observable<Critica[]>;
   result$?: Observable<Critica[]>
   value!: string;
+  breakpoint!: number;
 
   criticas= this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -42,6 +43,7 @@ export class CriticaComponent {
   @ViewChild('searchInput') searchInput!: ElementRef
 
   ngAfterViewInit(): void {
+    this.breakpoint = (window.innerWidth <= 600) ? 1 : 2;
     fromEvent(this.searchInput.nativeElement, 'keyup').pipe(
       filter(Boolean),
       debounceTime(400),
@@ -64,4 +66,8 @@ export class CriticaComponent {
       data: resenha
     })
   }
+
+  handleSize(event: any) {
+    this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
+    }
 }

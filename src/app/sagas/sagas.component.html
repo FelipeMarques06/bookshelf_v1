@@ -9,8 +9,8 @@
       </mat-form-field>
     </div>
     <div class="grid-container" *ngIf="result$ | async as busca">
-      <mat-grid-list cols="2" rowHeight="250px">
-        <mat-grid-tile *ngFor="let busca of result$| async"  [colspan]="busca.cols" [rowspan]="busca.rows">
+      <mat-grid-list [cols]="breakpoint" rowHeight="250px" (window:resize)="handleSize($event)">
+        <mat-grid-tile *ngFor="let busca of result$| async">
           <mat-card class="dashboard-card">
             <mat-card-header>
               <div mat-card-avatar class="example-header-image"></div>
@@ -34,8 +34,8 @@
       </button>
       <span>AS 10 SAGAS LITERÁRIAS MAIS FAMOSAS</span>
     </mat-toolbar>
-    <mat-grid-list cols="2" rowHeight="250px">
-      <mat-grid-tile *ngFor="let sagas of sagas$ | async" [colspan]="sagas.cols" [rowspan]="sagas.rows">
+    <mat-grid-list [cols]="breakpoint" rowHeight="250px" (window:resize)="handleSize($event)">
+      <mat-grid-tile *ngFor="let sagas of sagas$ | async">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <div mat-card-avatar class="example-header-image"></div>

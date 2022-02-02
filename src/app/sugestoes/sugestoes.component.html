@@ -8,8 +8,8 @@
       </mat-form-field>
     </div>
     <div class="grid-container" *ngIf="result$ | async as busca">
-      <mat-grid-list cols="2" rowHeight="180px">
-        <mat-grid-tile *ngFor="let busca of result$ | async" [colspan]="busca.cols" [rowspan]="busca.rows">
+      <mat-grid-list [cols]="breakpoint" rowHeight="180px" (window:resize)="handleSize($event)">
+        <mat-grid-tile *ngFor="let busca of result$ | async">
           <mat-card class="dashboard-card">
             <mat-card-header>
               <mat-card-title>{{busca.titulo}}</mat-card-title>
@@ -32,8 +32,8 @@
       </button>
       <span>SUGESTÕES DE LIVROS</span>
     </mat-toolbar>
-    <mat-grid-list cols="2" rowHeight="180px">
-      <mat-grid-tile *ngFor="let card of cards$ | async" [colspan]="card.cols" [rowspan]="card.rows">
+    <mat-grid-list [cols]="breakpoint" rowHeight="180px" (window:resize)="handleSize($event)">
+      <mat-grid-tile *ngFor="let card of cards$ | async">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <!-- <div mat-card-avatar class="example-header-image"></div> -->

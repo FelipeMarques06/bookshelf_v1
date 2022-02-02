@@ -17,6 +17,7 @@ export class FeedComponent implements OnInit, AfterViewInit{
   value!: string;
   formulario!: FormGroup;
   cards$: Observable<Dashboard[]>;
+  breakpoint!: number;
   usuario$= this.autenticacaoFirebaseService.usuarioLogado$;
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -30,6 +31,7 @@ export class FeedComponent implements OnInit, AfterViewInit{
   @ViewChild('searchInput') searchInput!: ElementRef
 
   ngOnInit(): void {
+    this.breakpoint = (window.innerWidth <= 600) ? 1 : 2;
     this.formulario = new FormGroup({
       titulo: new FormControl('')
     })
@@ -67,5 +69,9 @@ export class FeedComponent implements OnInit, AfterViewInit{
         )
         .subscribe();
     }
+
+    handleSize(event: any) {
+      this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
+      }
 
 }

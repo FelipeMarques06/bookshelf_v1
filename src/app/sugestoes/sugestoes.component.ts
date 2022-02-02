@@ -17,6 +17,7 @@ export class SugestoesComponent {
   cards$: Observable <Sugestoes[]>;
   result$?: Observable<Sugestoes[]>
   value!: string;
+  breakpoint!: number;
 
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -42,6 +43,7 @@ export class SugestoesComponent {
   @ViewChild('searchInput') searchInput!: ElementRef
 
   ngAfterViewInit(): void {
+    this.breakpoint = (window.innerWidth <= 600) ? 1 : 2;
     fromEvent(this.searchInput.nativeElement, 'keyup').pipe(
       filter(Boolean),
       debounceTime(400),
@@ -58,4 +60,8 @@ export class SugestoesComponent {
       })
     ).subscribe()
   }
+
+  handleSize(event: any) {
+    this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
+    }
 }

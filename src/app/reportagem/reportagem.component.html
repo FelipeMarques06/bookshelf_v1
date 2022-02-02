@@ -9,7 +9,7 @@
     apelo por bem estar pessoal, criatividade e autoconhecimento. A literatura brasileira é rica de grandes
     obras escritas por artistas consagrados e reconhecidos mundialmente.
   </mat-card>
-  <mat-grid-list cols="2" rowHeight="350px">
+  <mat-grid-list [cols]="breakpoint" rowHeight="350px" (window:resize)="handleSize($event)">
     <mat-grid-tile *ngFor="let reportagem of reportagem$ | async" [colspan]="reportagem.cols" [rowspan]="reportagem.rows">
       <mat-card class="reportagem-card">
         <img mat-card-image [src]="reportagem.img" alt="Livros">

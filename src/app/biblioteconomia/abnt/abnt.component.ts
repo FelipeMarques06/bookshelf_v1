@@ -15,6 +15,7 @@ import { AbntService } from './../services/abnt.service';
 export class AbntComponent {
 
   cards$: Observable<ABNT[]>;
+  breakpoint!: number;
   usuario$= this.autenticacaoFirebaseService.usuarioLogado$;
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -37,4 +38,12 @@ export class AbntComponent {
         })
       )
     }
+
+    ngOnInit(): void {
+      this.breakpoint = (window.innerWidth <= 600) ? 1 : 2;
+    }
+
+    handleSize(event: any) {
+      this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
+      }
 }

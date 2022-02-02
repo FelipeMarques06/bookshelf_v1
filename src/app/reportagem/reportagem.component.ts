@@ -1,5 +1,5 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { catchError, Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -16,6 +16,7 @@ export class ReportagemComponent {
 
   reportagem$: Observable<Reportagem[]>;
   usuario$= this.autenticacaoFirebaseService.usuarioLogado$;
+  breakpoint!: number;
   reportagens= this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
@@ -37,4 +38,12 @@ export class ReportagemComponent {
         })
       )
     }
+
+    ngOnInit(): void {
+      this.breakpoint = (window.innerWidth <= 600) ? 1 : 2;
+    }
+
+    handleSize(event: any) {
+      this.breakpoint = (event.target.innerWidth <= 600) ? 1 : 2;
+      }
 }
