@@ -34,7 +34,7 @@
       <button mat-icon-button class="example-icon" aria-label="Example icon-button with sticky_note_2 icon" matTooltip="Crítica">
         <mat-icon>sticky_note_2</mat-icon>
       </button>
-      <span>NORMAS TÉCNICAS ABNT</span>
+      <span>CRÍTICAS LITERÁRIAS</span>
     </mat-toolbar>
     <mat-grid-list [cols]="breakpoint" rowHeight="200px" (window:resize)="handleSize($event)">
       <mat-grid-tile *ngFor="let critica of criticas$ | async" [colspan]="critica.cols" [rowspan]="critica.rows">
