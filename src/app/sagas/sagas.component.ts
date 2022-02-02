@@ -6,7 +6,6 @@ import { catchError, fromEvent, Observable,filter, debounceTime, distinctUntilCh
 import { SagasService } from '../servicosInterface/sagas.service';
 import { map } from 'rxjs/operators';
 import { SagasDialogoComponent } from '../sagas-dialogo/sagas-dialogo.component';
-import { ConnectedOverlayPositionChange } from '@angular/cdk/overlay';
 
 @Component({
   selector: 'app-sagas',
@@ -18,6 +17,7 @@ export class SagasComponent implements AfterViewInit {
   sagas$: Observable<Sagas[]>;
   result$?: Observable<Sagas[]>
   value!: string;
+  breakpoint!: number;
 
   sagas= this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
@@ -44,6 +44,7 @@ export class SagasComponent implements AfterViewInit {
   @ViewChild('searchInput') searchInput!: ElementRef
 
   ngAfterViewInit(): void {
+    this.breakpoint = (window.innerWidth <= 700) ? 1 : 2;
     fromEvent(this.searchInput.nativeElement, 'keyup').pipe(
       filter(Boolean),
       debounceTime(400),
@@ -60,6 +61,10 @@ export class SagasComponent implements AfterViewInit {
       })
     ).subscribe()
   }
+
+  handleSize(event: any) {
+    this.breakpoint = (event.target.innerWidth <= 700) ? 1 : 2;
+    }
 
   abrirSagas(livros: [{nome:string}]){
     this.telaSagas.open(SagasDialogoComponent,{
