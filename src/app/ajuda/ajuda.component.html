@@ -1,6 +1,11 @@
 
 <div class="grid-container">
-  <h1>Possíveis Erros do BookShelf</h1>
+  <mat-toolbar color="accent">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with error_outline icon" matTooltip="Erros">
+      <mat-icon>error_outline</mat-icon>
+    </button>
+    <span>POSSÍVEIS ERROS</span>
+  </mat-toolbar>
 
   <mat-accordion>
     <mat-expansion-panel (opened)="panelOpenState = true"

@@ -1,8 +1,9 @@
 <div class="grid-container" *ngIf="cards$ | async as card; else loading">
   <mat-toolbar color="accent">
-    <div class="titulo">
-      <h1 class="mat-h1"> BASES DE DADOS DE BIBLIOTECONOMIA </h1>
-    </div>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with collections_bookmark icon" matTooltip="Base">
+      <mat-icon>collections_bookmark</mat-icon>
+    </button>
+    <span>BASES DE DADOS DE BIBLIOTECONOMIA</span>
   </mat-toolbar>
   <h2 class="mat-h2">Estas são algumas Bases de Dados na área de Biblioteconomia:</h2>
   <mat-grid-list cols="2" rowHeight="300px">

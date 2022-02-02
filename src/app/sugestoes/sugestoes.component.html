@@ -27,9 +27,10 @@
 
   <div class="grid-container" *ngIf="cards$ | async as card; else loading">
     <mat-toolbar color="accent">
-      <div class="titulo">
-        <h1 class="mat-h1"> SUGESTÕES DE LIVROS</h1>
-      </div>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with library_books icon" matTooltip="Sugestões">
+        <mat-icon>library_books</mat-icon>
+      </button>
+      <span>SUGESTÕES DE LIVROS</span>
     </mat-toolbar>
     <mat-grid-list cols="2" rowHeight="180px">
       <mat-grid-tile *ngFor="let card of cards$ | async" [colspan]="card.cols" [rowspan]="card.rows">

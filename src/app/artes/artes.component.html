@@ -1,9 +1,10 @@
 <mat-card>
   <div *ngIf=" livrosArtes$ | async as livrosArtes; else loading;">
     <mat-toolbar color="accent">
-      <div class="titulo">
-        <h1 class="mat-h1"> OS 10 PRINCIPAIS LIVROS DE ARTES</h1>
-      </div>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with color_lens icon" matTooltip="Artes">
+        <mat-icon>color_lens</mat-icon>
+      </button>
+      <span>OS 10 PRINCIPAIS LIVROS DE ARTES</span>
     </mat-toolbar>
     <table mat-table [dataSource]="livrosArtes" class="mat-elevation-z8">
 

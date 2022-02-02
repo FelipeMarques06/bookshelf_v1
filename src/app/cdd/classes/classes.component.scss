@@ -1,5 +1,6 @@
 table {
   width: 100%;
+  text-align: center;
 }
 .example-spacer {
   flex: 1 1 auto;
@@ -16,4 +17,10 @@ table {
 }
 .resultado-pesquisa {
   margin: 8px 0;
+}
+
+.mat-header-cell{
+  text-transform: uppercase;
+  font-size: 15px;
+  text-align: center;
 }

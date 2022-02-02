@@ -1,9 +1,10 @@
 <mat-card>
   <div *ngIf=" livrosDireito$ | async as livrosDireito; else loading;">
     <mat-toolbar color="accent">
-      <div class="titulo">
-        <h1 class="mat-h1"> OS 10 PRINCIPAIS LIVROS DE DIREITO</h1>
-      </div>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with gavel icon" matTooltip="Direito">
+        <mat-icon>gavel</mat-icon>
+      </button>
+      <span>OS 10 PRINCIPAIS LIVROS DE DIREITO</span>
     </mat-toolbar>
      <table mat-table [dataSource]="livrosDireito" class="mat-elevation-z8">
 

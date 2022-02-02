@@ -1,6 +1,10 @@
 <div class="grid-container">
-  <h1>Dúvidas Frequentes</h1>
-
+  <mat-toolbar color="accent">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with help_outline icon" matTooltip="Dúvidas">
+      <mat-icon>help_outline</mat-icon>
+    </button>
+    <span>DÚVIDAS FREQUENTES</span>
+  </mat-toolbar>
   <mat-accordion>
     <mat-expansion-panel (opened)="panelOpenState = true"
                          (closed)="panelOpenState = false">
