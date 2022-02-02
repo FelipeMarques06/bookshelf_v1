@@ -31,9 +31,10 @@
 
   <div class="grid-container" *ngIf="criticas$ | async as critica; else loading">
     <mat-toolbar color="accent">
-      <div class="titulo">
-        <h1 class="mat-h1"> CRÍTICAS LITERÁRIAS</h1>
-      </div>
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with sticky_note_2 icon" matTooltip="Crítica">
+        <mat-icon>sticky_note_2</mat-icon>
+      </button>
+      <span>NORMAS TÉCNICAS ABNT</span>
     </mat-toolbar>
     <mat-grid-list cols="2" rowHeight="200px">
       <mat-grid-tile *ngFor="let critica of criticas$ | async" [colspan]="critica.cols" [rowspan]="critica.rows">

@@ -1,5 +1,6 @@
 table {
   width: 100%;
+  text-align: center;
 }
 .example-spacer {
   flex: 1 1 auto;
@@ -17,4 +18,10 @@ table {
 
 .titulo{
   margin-left: 350px;
+}
+
+.mat-header-cell{
+  text-transform: uppercase;
+  font-size: 15px;
+  text-align: center;
 }

@@ -4,7 +4,7 @@
   "titulo": "O Senhor dos Anéis",
   "autor":"J.R.R. Tolkien",
   "img": "../../assets/imagens/sagas1.jpg",
-  "descricao": "Marco para o gênero fantasia com direito a adaptação cinematográfica. A historia gira em torno de Frodo Bolseiro, um Hobbit com a missão de destruir um misterioso anel, um artefato magico que representa um grande perigo para quem o utiliza.",
+  "descricao": "Marco para o gênero fantasia com direito a adaptação cinematográfica. A historia gira em torno de Frodo Bolseiro, um Hobbit com a missão de destruir um misterioso anel.",
   "livros": [{"nome":"O Senhor dos Anéis: A Sociedade do Anel"},{"nome":"O Senhor dos Aneis: As duas torres"},{"nome":"O Senhor dos Anéis: O retorno do rei"}],
   "cols": 1,
   "rows": 2
@@ -14,7 +14,7 @@
   "titulo": "As Crônicas do Gelo e Fogo",
   "autor":"George R.R Martin",
   "img": "../../assets/imagens/sagas2.jpg",
-  "descricao": "Série de alta fantasia, os livros narram os acontecimentos dos Sete Reinos, onde uma guerra pela posse do Trono de Ferro é travada. A história se desenvolve principalmente no continente de Westeros, mas também em uma extensa terra ao leste chamada Essos.",
+  "descricao": "Série de alta fantasia, os livros narram os acontecimentos dos Sete Reinos, onde uma guerra pela posse do Trono de Ferro é travada. A história se desenvolve principalmente no continente de Westeros.",
   "livros": [{"nome":"A Guerra dos Tronos"},{"nome":"A Fúria dos Reis "},{"nome":"A Tormenta de Espadas"},{"nome":"O Festim dos Corvos"},{"nome":"A Dança dos Dragões"},{"nome":"Os Ventos do Inverno"}],
   "cols": 1,
   "rows": 2
@@ -34,8 +34,7 @@
   "titulo": "Harry Potter",
   "autor":"JK Rowling",
   "img": "../../assets/imagens/sagas4.jpg",
-  "descricao": "A saga conta a historia da criança que sobreviveu ao ataque mortal do lorde das trevas ( Lord Voldemort) quando era apenas um bebê. Os livros seguem contando as historias do protagonista em sua formação como bruxo na escola de magia e bruxaria de Hogwarts.",
-  "conteudo": "klklklklklk",
+  "descricao": "A saga conta a historia da criança, que sobreviveu ao ataque mortal do lorde das trevas,em sua formação como bruxo na escola de magia e bruxaria de Hogwarts.",
   "livros": [{"nome":"Harry Potter e a Pedra Filosofal"},{"nome":"Harry Potter e a Câmara Secreta"},{"nome":"Harry Potter e o Prisioneiro de Azkaban"},{"nome":"Harry Potter e o Cálice de Fogo"},{"nome":"Harry Potter e a Ordem da Fênix"},{"nome":"Harry Potter e o Enigma do Príncipe"},{"nome":"Harry Potter e as Relíquias da Morte"}],
   "cols": 1,
   "rows": 2
@@ -55,7 +54,7 @@
   "titulo": "Desventuras em Série",
   "autor":"Lemony Snicket",
   "img": "../../assets/imagens/sagas6.png",
-  "descricao": "Conta a historia dos órfãos Baudelaire sob a tutela do conde Olaf, um homem terrível que odeia crianças. Os pais das crianças morrem em um incêndio, e em cada livro mostra as tentativas frustradas de conde Olaf a roubar a fortuna dos órfãos.",
+  "descricao": "Conta a historia dos órfãos Baudelaire sob a tutela do conde Olaf, um homem terrível que odeia crianças. Os pais das crianças morrem em um incêndio, e o conde Olaf tenta roubar a fortuna dos órfãos.",
   "livros": [{"nome":"Mau Começo"},{"nome":"A Sala Dos Répteis"},{"nome":"O Lago Das Sanguessugas"},{"nome":"e mais 10"}],
   "cols": 1,
   "rows": 2

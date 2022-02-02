@@ -1,8 +1,9 @@
 <div class="grid-container" *ngIf="cards$ | async as card; else loading">
   <mat-toolbar color="accent">
-    <div class="titulo">
-      <h1 class="mat-h1"> BIBLIOTECAS VIRTUAIS</h1>
-    </div>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with collections_bookmark icon" matTooltip="Bib Virtual">
+      <mat-icon>collections_bookmark</mat-icon>
+    </button>
+    <span>BIBLIOTECAS VIRTUAIS</span>
   </mat-toolbar>
   <h2 class="mat-h2">Estas são algumas das principais bibliotecas virtuais disponíveis nas plataformas digitais:</h2>
 
