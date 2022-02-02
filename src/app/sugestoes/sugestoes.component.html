@@ -9,7 +9,7 @@
     </div>
     <div class="grid-container" *ngIf="result$ | async as busca">
       <mat-grid-list [cols]="breakpoint" rowHeight="180px" (window:resize)="handleSize($event)">
-        <mat-grid-tile *ngFor="let busca of result$ | async">
+        <mat-grid-tile *ngFor="let busca of result$ | async " [rowspan]="busca.rows">
           <mat-card class="dashboard-card">
             <mat-card-header>
               <mat-card-title>{{busca.titulo}}</mat-card-title>
@@ -33,7 +33,7 @@
       <span>SUGESTÕES DE LIVROS</span>
     </mat-toolbar>
     <mat-grid-list [cols]="breakpoint" rowHeight="180px" (window:resize)="handleSize($event)">
-      <mat-grid-tile *ngFor="let card of cards$ | async">
+      <mat-grid-tile *ngFor="let card of cards$ | async" [rowspan]="card.rows">
         <mat-card class="dashboard-card">
           <mat-card-header>
             <!-- <div mat-card-avatar class="example-header-image"></div> -->
