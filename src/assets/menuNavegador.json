@@ -4,5 +4,5 @@
   {"linkMenu": "/reportagem", "labelMenu":"Especial do Mês", "hab": true},
   {"linkMenu": "/duvidas", "labelMenu":"Dúvidas Frequentes", "hab": true},
   {"linkMenu": "/ajuda", "labelMenu":"Possíveis Erros", "hab": true},
-  {"linkMenu": "/criticas", "labelMenu":"Críticas Literárias", "hab": true}
+  {"linkMenu": "/criticas/critica", "labelMenu":"Críticas Literárias", "hab": true}
 ]
