@@ -1,9 +1,10 @@
+import { Sugestoes } from './../modelosInterface/sugestoes';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component } from '@angular/core';
-import { catchError, Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { catchError, fromEvent, Observable, of } from 'rxjs';
+import { debounceTime, distinctUntilChanged, filter, map, tap } from 'rxjs/operators';
 
-import { Sugestoes } from '../modelosInterface/sugestoes';
+
 import { SugestoesService } from '../servicosInterface/sugestoes.service';
 
 @Component({
@@ -14,6 +15,9 @@ import { SugestoesService } from '../servicosInterface/sugestoes.service';
 export class SugestoesComponent {
 
   cards$: Observable <Sugestoes[]>;
+  result$?: Observable<Sugestoes[]>
+  value!: string;
+
   cards = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
     map(({ matches }) => {
       if (matches) {
@@ -33,5 +37,25 @@ export class SugestoesComponent {
         return of([])
       })
     );
+  }
+
+  @ViewChild('searchInput') searchInput!: ElementRef
+
+  ngAfterViewInit(): void {
+    fromEvent(this.searchInput.nativeElement, 'keyup').pipe(
+      filter(Boolean),
+      debounceTime(400),
+      distinctUntilChanged(),
+      tap(() => {
+        const query = this.searchInput.nativeElement.value
+        // console.log(query)
+        if(query) {
+          this.result$ = this.sugestoesService.pesquisar(query)
+          console.log(this.result$)
+        } else {
+          this.result$ = undefined
+        }
+      })
+    ).subscribe()
   }
 }
